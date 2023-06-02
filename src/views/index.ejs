@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Import Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Import Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+    <!-- Import index css -->
+    <link href="http://localhost:3000/static/style/index.css" rel="stylesheet">
+    
+    <!-- Import background gradient css -->
+    <link href="http://localhost:3000/static/style/background.css" rel="stylesheet">
+    
+    <!-- Import JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Import full JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+
+    <title>AI PAGE</title>
+</head>
+<body>
+    
+    <%- include('./components/navbar.ejs') %>
+
+    <div class="container">
+        <div class="info-container m-lg-5">
+            <!-- Two squares side by side -->
+            <div class="card left-container">
+                <div class="title-panel">
+                    <h1>ITS Character Classificator</h1>
+                </div>
+                <div class="info-panel">
+                    <p class="info-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis scelerisque dignissim. 
+                        Donec lorem nisi, congue at massa nec, vehicula pretium dui. Suspendisse et tellus ut nibh viverra porta. 
+                        Ut tincidunt ipsum sit amet accumsan tincidunt. Aenean congue nibh non justo dapibus, at ornare tortor ultrices. 
+                        Donec vestibulum diam non eros luctus molestie
+                    </p>
+                </div>
+                <div class="controls-panel">
+                    <div class="d-flex justify-content-between">
+                        <a id="tryout" href="/classificator" class="btn btn-control btn-control-tryout">Probajte klasifikator <i class='bi bi-arrow-right'></i></a>
+                        <a href="/about" class="btn btn-control btn-control-readmore">Pročitajte više</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card right-container">
+                <h1>ITS Character Classificator</h1>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./components/footer.ejs') %>
+</body>
+</html>
