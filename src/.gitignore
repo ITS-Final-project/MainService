@@ -1,1 +1,9 @@
 /node_modules
+
+# Service JWT keys
+msprivate.key
+mspublic.key
+pyprivate.key
+pypublic.key
+usprivate.key
+uspublic.key
