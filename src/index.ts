@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import { UserController } from './user/Controller';
 import { ClassificatorController } from './classificator/Controller';
 import { AuthorizationHandler } from './authorization/authorization';
+import { AuthenticationHandler } from './authentication/authentication';
 
 const app = express();
 const port = 3000;
@@ -25,7 +26,7 @@ app.use('/user', userController.getRouter());
 app.use('/classificator', classificatorController.getRouter());
 
 app.get('/', (req, res) => {
-    res.render('index.ejs', { title: 'Express' });
+    res.render('index.ejs', { title: 'Express', user: AuthenticationHandler.getInstance().getUser(req, res) });
 
     }
 );

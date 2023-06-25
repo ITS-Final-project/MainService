@@ -5,6 +5,8 @@ import jwtConfiguration from '../configuration/jwtConfiguration'
 import { Jwt } from 'jsonwebtoken';
 import { USSecret } from '../configuration/secretConfiguration';
 
+import { AuthenticationHandler } from '../authentication/authentication';
+
 const url = require('url');
 
 const router = express.Router();
@@ -12,7 +14,11 @@ const router = express.Router();
 export class UserController {
     private static _instance: UserController;
 
-    private constructor() {
+    private _authenticationHandler: AuthenticationHandler;
+
+    private constructor(authenticationHandler?: AuthenticationHandler) {
+
+        this._authenticationHandler = authenticationHandler || AuthenticationHandler.getInstance();
 
         //* Login
         //* Body: { token: string }
@@ -33,7 +39,12 @@ export class UserController {
                     return;
                 }
 
-                res.render('login.ejs', { loginPage: loginPage, error: req.query.error });
+                res.render('login.ejs', 
+                { 
+                    loginPage: loginPage, 
+                    error: req.query.error,
+                    user: this._authenticationHandler.getUser(req, res)
+                });
             }).catch((error) => {
                 console.log(error);
                 res.status(500).send('Internal server error');
@@ -59,12 +70,37 @@ export class UserController {
                     res.status(500).send('Internal server error');
                     return;
                 }
-                res.render('register.ejs', { registerPage: registerPage, badFields: req.query.badFields, message: req.query.message });
+                res.render('register.ejs', 
+                { 
+                    registerPage: registerPage, 
+                    badFields: req.query.badFields, 
+                    message: req.query.message,
+                    user: this._authenticationHandler.getUser(req, res)
+                });
             }).catch((error) => {
                 console.log(error);
                 res.status(500).send('Internal server error');
             });
         })
+
+        router.get('/logout', (req, res) => {
+            var token = req.cookies.auth;
+
+            if (!token) {
+                res.redirect('/');
+                return;
+            }
+
+            axios.post('http://localhost:3001/user/logout', {
+                token: token
+            }).then((response) => {
+                res.clearCookie('auth');
+                res.redirect('/');
+            }).catch((error) => {
+                res.redirect('/');
+            });
+
+        });
 
         // ! ==================== POST METHODS ====================
         

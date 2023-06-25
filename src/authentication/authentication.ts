@@ -24,21 +24,21 @@ export class AuthenticationHandler implements IAuthenticationHandler {
         var token = req.cookies.auth;
 
         if (!token) {
-            return {username: 'guest', email: 'guest'};
+            return {username: 'guest', email: 'guest', roles: ['guest']};
         }
 
         try {
             var data = jwtConfiguration.verify(token, new USSecret()) as JwtPayload;
             
             if (!data) {
-                return {username: 'guest', email: 'guest'};
+                return {username: 'guest', email: 'guest', roles: ['guest']};
             }
 
-            return {username: data.user.username, email: data.user.email};
+            return {username: data.user.username, email: data.user.email, roles: data.user.roles};
 
         } catch (err) {
             
-            return {username: 'guest', email: 'guest'};
+            return {username: 'guest', email: 'guest', roles: ['guest']};
         }
     }
 
