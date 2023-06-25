@@ -1,0 +1,102 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff  !important;
+    opacity: 0.9 !important; 
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff  !important;
+    opacity: 0.9 !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff !important;
+    opacity: 0.9 !important;
+}
+
+::-ms-reveal, ::-ms-clear {
+    filter: invert(100%);
+}
+
+.login-container{
+    backdrop-filter: blur(16px) saturate(67%);
+    -webkit-backdrop-filter: blur(16px) saturate(67%);
+    background-color: rgba(17, 25, 40, 0.43);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.input-control{
+    background-color: rgba(17, 25, 40, 0.1);
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    color: #fff;
+    transition: all 0.2s;
+    font-size: large;
+}
+
+.input-control:focus, .input-control:active, .input-control:not(:placeholder-shown){
+    background-color: #1f2a37;
+    border-radius: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    color: #fff;
+    transition: all 0.2s;
+    font-size: large;
+
+    /* No focus border */
+    box-shadow: none;
+    outline: none;
+}
+
+.group-text {
+    color: #fff;
+    background-color: #1f2a37;
+
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.btn-login{
+    transition: all 0.2s;
+    font-size: large;
+
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    
+    color: #fff;
+}
+
+.btn-login:hover{
+    transition: all 0.2s;
+    font-size: large;
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    color: #fff;
+    background-color: #1f2a37;
+
+    border-radius: 10px 30px 30px 10px;
+}
+
+.btn-register{
+    transition: all 0.2s;
+    font-size: large;
+
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    
+    color: #fff;
+}
+
+.btn-register:hover{
+    transition: all 0.2s;
+    font-size: large;
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    color: #fff;
+    background-color: #1f2a37;
+
+    border-radius: 30px 10px 10px 30px;
+}

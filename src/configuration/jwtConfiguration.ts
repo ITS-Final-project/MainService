@@ -1,28 +1,14 @@
-import { IPrivateKey, IPublicKey } from './keyConfiguration';
 import jwt from 'jsonwebtoken';
+import { ISecret } from './secretConfiguration';
 
 const jwtConfiguration = {
-    sign: (payload: any, privateKey: IPrivateKey) => {
-        return jwt.sign(payload, privateKey.getPrivateKey(), { algorithm: 'RS256' });
+    sign: (payload: any, secret: ISecret) => {
+        return jwt.sign(payload, secret.getSecret(), { algorithm: 'HS256' });
     },
-    verify: (token: string, publicKey: IPublicKey) => {
-        return jwt.verify(token, publicKey.getPublicKey(), { algorithms: ['RS256'] });
+    verify: (token: string, secret: ISecret) => {
+        return jwt.verify(token, secret.getSecret(), { algorithms: ['HS256'] });
     }
 };
 
 export default jwtConfiguration;
 
-// Example of use:
-// Path: configuration\jwtConfiguration.ts
-// import { MSKeyConfiguration } from './keyConfiguration';
-// import jwtConfiguration from './jwtConfiguration';
-// 
-// const token = jwtConfiguration.sign({ id: 1 }, new MSKeyConfiguration());
-// console.log(token);
-//
-// Path: configuration\jwtConfiguration.ts
-// import { MSKeyConfiguration } from './keyConfiguration';
-// import jwtConfiguration from './jwtConfiguration';
-//
-// const token = jwtConfiguration.sign({ id: 1 }, new MSKeyConfiguration());
-// console.log(token);
