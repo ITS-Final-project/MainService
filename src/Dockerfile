@@ -15,6 +15,9 @@ EXPOSE 3000
 
 ENV USSURL http://localhost
 ENV USSPORT 3001
+ENV MS_SECRET=M6$@31@%WiLl834F0rMeH1re
+ENV US_SECRET=7h1$S3CrEtIsOuTT0Gue$$
+ENV PY_SECRET=A1w1iLl83c0M3$0m3@1r
 
 # Install dependencies
 RUN npm install
