@@ -2,11 +2,12 @@ import express from 'express';
 import axios from 'axios';
 
 import jwtConfiguration from '../configuration/jwtConfiguration'
-import { Jwt } from 'jsonwebtoken';
+import { Jwt, JwtPayload } from 'jsonwebtoken';
 import { USSecret } from '../configuration/secretConfiguration';
 
 import { AuthenticationHandler } from '../authentication/authentication';
 import { AuthorizationHandler } from '../authorization/authorization';
+import { Decipher } from 'crypto';
 
 const url = require('url');
 
@@ -86,6 +87,9 @@ export class UserController {
             });
         })
 
+        //* Logout
+        //* Body: { token: string }
+        //* Response: { location: string }
         router.get('/logout', (req, res) => {
             var token = req.cookies.auth;
 
@@ -104,6 +108,9 @@ export class UserController {
             });
         });
 
+        //* Dashboard
+        //* Body: { token: string }
+        //* Response: { dashboardPage: string }
         router.get('/admin/dashboard', this._authorizationHandler.checkRole('admin'), (req, res) => {
             res.render('admin_dashboard.ejs', 
             { 
@@ -112,11 +119,119 @@ export class UserController {
             });
         });
 
+        //* Profile
+        //* Body: { token: string }
+        //* Response: { profilePage: string ; token: cookie }
+        router.get('/profile', (req, res) => {
+            var token = req.cookies.auth;
+
+            if (!token) {
+                res.redirect('/');
+                return;
+            }
+
+            axios.get('http://localhost:3001/user/profile', {
+                data: {
+                    token: token
+                }
+            }).then((response) => {
+                var token = response.headers['set-cookie']?.at(0)?.split(';')[0].split('=')[1];
+
+                if (!token) {
+                    console.log('Error');
+                    res.redirect('/');
+                    return;
+                }
+
+                var decodedToken = jwtConfiguration.verify(token, new USSecret());
+
+                if (!decodedToken) {
+                    console.log('Error');
+                    res.redirect('/');
+                    return;
+                }
+
+                var profilePage = response.data;
+
+                if (!profilePage) {
+                    console.log('Error');
+                    res.redirect('/');
+                    return;
+                }
+
+                res.cookie('auth', token, { httpOnly: true });
+
+                res.render('profile.ejs', 
+                { 
+                    profilePage: profilePage, 
+                    user: this._authenticationHandler.getUser(req, res)
+                });
+            }).catch((error) => {
+                console.log(error);
+                res.redirect('/');
+            });
+        })
+
        
         // ! ==================== POST METHODS ====================
 
-        
+        router.post('/edit', (req, res) => {
+            var token = req.cookies.auth;
 
+            if (!token) {
+                res.redirect('/');
+                return;
+            }
+
+            var decodedToken = jwtConfiguration.verify(token, new USSecret()) as JwtPayload;
+
+            if (!decodedToken) {
+                res.redirect('/');
+                return;
+            }
+
+            var user = decodedToken.user;
+
+            if (!user) {
+                res.redirect('/');
+                return;
+            }
+
+            console.log("Body: " );
+            console.log(req.body);
+
+            var editToken = jwtConfiguration.sign({ body: req.body, id: user.id }, new USSecret());
+
+            axios.post('http://localhost:3001/user/edit', {
+                token: editToken
+            }).then((response) => {
+                var token = response.data.token;
+
+                if (!token) {
+                    res.redirect('/user/profile');
+                    return;
+                }
+
+                var decodedToken = jwtConfiguration.verify(token, new USSecret());
+                
+                if (!decodedToken) {
+                    res.redirect('/user/profile');
+                    return;
+                }
+
+                res.cookie('auth', token, { httpOnly: true });
+
+                res.redirect('/user/profile');
+            }).catch((error) => {
+                console.log(error);
+                res.redirect('/user/profile');
+            });
+        })
+
+        //* Count
+        //* Body: { username: string, email: string, roles: string[] }
+        //* Response: { count: number }
+        //* Sends request to user service to count users
         router.post('/count', (req, res) => {
             
             var username = req.body.username;
@@ -151,7 +266,10 @@ export class UserController {
 
         })
 
-
+        //* Search
+        //* Body: { username: string, email: string, roles: string[], pagesize: number, pagenumber: number }
+        //* Response: { users: User[] }
+        //* Sends request to user service to search users
         router.post('/search', (req, res) => {
             console.log(req.body);
             var userame = req.body.username;

@@ -1,14 +1,23 @@
 .transition-container{
-    animation: fade 0.5s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
     width: 100%;
     height: 100%;
 }
 
-@keyframes fade {
+@keyframes fadeIn {
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
