@@ -197,9 +197,6 @@ export class UserController {
                 return;
             }
 
-            console.log("Body: " );
-            console.log(req.body);
-
             var editToken = jwtConfiguration.sign({ body: req.body, id: user.id }, new USSecret());
 
             axios.post('http://localhost:3001/user/edit', {
