@@ -6,6 +6,7 @@ import { Jwt } from 'jsonwebtoken';
 import { USSecret } from '../configuration/secretConfiguration';
 
 import { AuthenticationHandler } from '../authentication/authentication';
+import { AuthorizationHandler } from '../authorization/authorization';
 
 const url = require('url');
 
@@ -15,10 +16,12 @@ export class UserController {
     private static _instance: UserController;
 
     private _authenticationHandler: AuthenticationHandler;
+    private _authorizationHandler: AuthorizationHandler;
 
-    private constructor(authenticationHandler?: AuthenticationHandler) {
+    private constructor(authenticationHandler?: AuthenticationHandler, authorizationHandler?: AuthorizationHandler) {
 
         this._authenticationHandler = authenticationHandler || AuthenticationHandler.getInstance();
+        this._authorizationHandler = authorizationHandler || AuthorizationHandler.getInstance();
 
         //* Login
         //* Body: { token: string }
@@ -99,10 +102,92 @@ export class UserController {
             }).catch((error) => {
                 res.redirect('/');
             });
-
         });
 
+        router.get('/admin/dashboard', this._authorizationHandler.checkRole('admin'), (req, res) => {
+            res.render('admin_dashboard.ejs', 
+            { 
+                title: 'Admin dashboard',
+                user: this._authenticationHandler.getUser(req, res)
+            });
+        });
+
+       
         // ! ==================== POST METHODS ====================
+
+        
+
+        router.post('/count', (req, res) => {
+            
+            var username = req.body.username;
+            var email = req.body.email;
+            var role = req.body.role;
+            
+            var token = req.cookies.auth;
+
+            if (!token) {
+                res.redirect('/');
+                return;
+            }
+
+            var countToken = jwtConfiguration.sign({username: username, email: email, role: role}, new USSecret());
+
+            axios.post('http://localhost:3001/user/count', {
+                token: countToken,
+            }).then((response) => {
+                var count = response.data;
+
+                if (!count) {
+                    console.log('Error');
+                    res.status(500).send('Internal server error');
+                    return;
+                }
+
+                res.json(count);
+            }).catch((error) => {
+                console.log(error);
+                res.status(500).send('Internal server error');
+            });
+
+        })
+
+
+        router.post('/search', (req, res) => {
+            console.log(req.body);
+            var userame = req.body.username;
+            var email = req.body.email;
+            var roles = req.body.roles;
+
+            var pagesize = req.body.pagesize;
+            var pagenumber = req.body.pagenumber;
+
+            var token = req.cookies.auth;
+
+            if (!token) {
+                res.redirect('/');
+                return;
+            }
+
+            var searchToken = jwtConfiguration.sign({username: userame, email: email, roles: roles, pagesize: pagesize, pagenumber: pagenumber}, new USSecret());
+
+            axios.post('http://localhost:3001/user/search', {
+                token: searchToken,
+            }).then((response) => {
+                var searchedUsers = response.data;
+
+                if (!searchedUsers) {
+                    console.log('Error');
+                    res.status(500).send('Internal server error');
+                    return;
+                }
+
+                res.json(searchedUsers);
+            }).catch((error) => {
+                console.log(error);
+                res.status(500).send('Internal server error');
+            });
+
+        })
         
         //* Login
         //* Body: { usernameOrEmail: string, password: string }

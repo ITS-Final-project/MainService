@@ -10,6 +10,7 @@ export interface IAuthorizationHandler {
     sign(payload: any, secret: ISecret): string;
 
     checkSession(): (req: any, res: any, next: any) => void;
+    getTempToken(serviceName: string): (req: any, res: any, next: any) => void;
 }
 
 export class AuthorizationHandler implements IAuthorizationHandler {
@@ -59,6 +60,38 @@ export class AuthorizationHandler implements IAuthorizationHandler {
         return jwtConfiguration.sign(payload, secret);
     }
 
+    checkRole(role: string): (req: any, res: any, next: any) => void {
+        return (req: any, res: any, next: any) => {
+            var token = req.body.token || req.query.token || req.headers['x-access-token'] || req.cookies.auth;
+
+            if (!token) {
+                res.redirect('/user/login');
+                return;
+            }
+
+            axios.post('http://localhost:3001/user/role/check', {
+                token: token,
+                role: role
+            }).then((response) => {
+                var status = response.status;
+
+                if (!status) {
+                    res.redirect('/user/login');
+                    return;
+                }
+
+                if (status !== 200) {
+                    res.redirect('/user/login');
+                    return;
+                }
+
+                next();
+            }).catch((error) => {
+                res.redirect('/user/login');
+            });
+        }
+    }
+
     checkSession(): (req: any, res: any, next: any) => void {
         return (req: any, res: any, next: any) => {
             var toPage = req.originalUrl;
@@ -72,7 +105,7 @@ export class AuthorizationHandler implements IAuthorizationHandler {
                 return;
             }
 
-            axios.post('http://localhost:3001/user/checkSession', {
+            axios.post('http://localhost:3001/session/verify', {
                 token: token
             }).then((response) => {
                 var token = response.data.token;
@@ -86,6 +119,16 @@ export class AuthorizationHandler implements IAuthorizationHandler {
                 }
 
                 var decodedToken = jwtConfiguration.verify(token, new USSecret());
+
+                if (!decodedToken) {
+                    console.log('Error: token is not valid');
+                    res.cookie('toPage', toPage, { httpOnly: true });
+
+                    res.redirect('/user/login');
+                }
+
+                res.cookie('session', token, { httpOnly: true });
+
                 next();
             }).catch((error) => {
                 console.log(error);
@@ -96,6 +139,8 @@ export class AuthorizationHandler implements IAuthorizationHandler {
         }
     }
 
+    
+
     clearToPage(): (req: any, res: any, next: any) => void {
         return (req: any, res: any, next: any) => {
             // If not going to login page, clear toPage cookie
@@ -104,6 +149,46 @@ export class AuthorizationHandler implements IAuthorizationHandler {
             }
             next();
 
+        }
+    }
+
+    getTempToken(serviceName: string): (req: any, res: any, next: any) => void {
+        return (req: any, res: any, next: any) => {
+            var token = req.body.token || req.query.token || req.headers['x-access-token'] || req.cookies.auth;
+
+            if (!token) {
+                res.status(401).send('Unauthorized');
+                return;
+            }
+
+            try {
+                axios.post('http://localhost:3001/api/temp/create', {
+                    token: token,
+                }).then((response) => {
+                    var token = response.data.token;
+
+                    if (!token) {
+                        res.status(401).send('Unauthorized');
+                        return;
+                    }
+
+                    var decodedToken = jwtConfiguration.verify(token, new USSecret());
+
+                    if (!decodedToken) {
+                        res.status(401).send('Unauthorized');
+                        return;
+                    }
+
+                    res.cookie('tempToken', token, { httpOnly: false });
+                    next();
+                }).catch((error) => {
+                    res.status(401).send('Unauthorized');
+                });
+
+
+            } catch (err) {
+                res.status(401).send('Unauthorized');
+            }
         }
     }
 }

@@ -29,7 +29,7 @@
   
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark rounded shadow-navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">AI CClass</a>
+        <a onclick="getAnimationState()" class="navbar-brand" href="/">AI CClass</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,10 +37,10 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <div class="vl"></div>
             <li class="nav-item">
-              <a class="nav-link" href="/about">Uputsvo</a>
+              <a onclick="getAnimationState()" class="nav-link" href="/about">Uputsvo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact">O klasifikatoru</a>
+              <a onclick="getAnimationState()" class="nav-link" href="/contact">O klasifikatoru</a>
             </li>
 
             <!-- If user has admin role -->
@@ -50,18 +50,12 @@
                   Admin
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/admin/dashboard">Admin Dashboard</a></li>
+                  <li><a onclick="getAnimationState()" class="dropdown-item" href="/admin/dashboard">Admin Dashboard</a></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="/tickets">Tickets</a></li>
-                  <li><a class="dropdown-item" href="/admin/logs">Logs</a></li>
-                  <li><a class="dropdown-item" href="/admin/users/list">Users</a></li>
-                  <li><a class="dropdown-item" href="/admin/changelog/add">Create changelog</a></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><a class="dropdown-item" href="#">Restart robot server</a></li>
+                  <li><a onclick="getAnimationState()" class="dropdown-item" href="/admin/logs">Logs</a></li>
+                  <li><a onclick="getAnimationState()" class="dropdown-item" href="/admin/users/list">Users</a></li>
                 </ul>
               </li>
             <% } %>
@@ -82,7 +76,7 @@
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="/user/logout">Log out</a></li>
+                  <li><a onclick="getAnimationState()" class="dropdown-item" href="/user/logout">Log out</a></li>
                 </ul>
               </li>
 
@@ -90,10 +84,10 @@
 
               <!-- If not logged in -->
               <li class="nav-item">
-                <a class="nav-link" href="/user/login">Log in</a>
+                <a class="nav-link" onclick="getAnimationState()" href="/user/login">Log in</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/user/register">Register</a>
+                <a class="nav-link" onclick="getAnimationState()" href="/user/register">Register</a>
               </li>
 
             <% } %>
@@ -101,3 +95,5 @@
           </ul>
     </nav>
   </div>
+
+  <script src="http://localhost:3000/static/js/master.js"></script>

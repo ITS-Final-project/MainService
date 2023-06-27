@@ -22,14 +22,16 @@
         <!-- Import full JQuery -->
         <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
-
+        <link rel="stylesheet" href="http://localhost:3000/static/style/master.css">
     <title>Login</title>
 </head>
-<body>
+<body onload="loadAnimationState()">
     <%- include('./components/navbar.ejs') %>
 
     <!-- Loads html page -->
-    <%- loginPage %>
+    <div class="transition-container">
+        <%- loginPage %>
+    </div>
 
     <!-- Shows error message if error == 1 (could be something else as well) -->
     <% if(error == 1) { %>

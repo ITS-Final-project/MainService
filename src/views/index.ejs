@@ -23,10 +23,10 @@
     <!-- Import full JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
-
+    
     <title>AI PAGE</title>
 </head>
-<body>
+<body onload="loadAnimationState()">
     
     <%- include('./components/navbar.ejs') %>
 
@@ -48,7 +48,7 @@
                 <div class="controls-panel">
                     <div class="d-flex justify-content-between">
                         <a id="tryout" href="/classificator" class="btn btn-control btn-control-tryout">Probajte klasifikator <i class='bi bi-arrow-right'></i></a>
-                        <a href="/about" class="btn btn-control btn-control-readmore">Pročitajte više</a>
+                        <a onclick="getAnimationState()" href="#about" class="btn btn-control btn-control-readmore">Pročitajte više</a>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,6 @@
             </div>
         </div>
     </div>
-
     <%- include('./components/footer.ejs') %>
 </body>
 </html>

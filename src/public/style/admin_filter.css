@@ -1,0 +1,55 @@
+.filter-card {
+    border-radius: 15px;
+}
+
+.table-card {
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.table-card-container{
+    border-radius: 10px;
+}
+
+.btn-add{
+    padding: 5px 20px;
+    height: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 1px solid #2fa500;
+    color: #2fa500;
+
+    border-radius: 30px;
+    font-size: 15px;
+}
+
+.btn-add:hover{
+    background-color: #2fa500;
+    color: #ffffff;
+    border: #2fa500 solid 1px;
+}
+
+.role-admin{
+    /* Pill shaped red  */
+    background-color: #dc3545;
+    color: white;
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+.role-user{
+    /* Pill shaped blue */
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+.btn-select, .dd{
+    border : 1px solid #ced4da;
+    border-radius: 0;
+    width: 100%;
+    text-align: left;
+}

@@ -22,13 +22,16 @@
         <!-- Import full JQuery -->
         <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
+        <link rel="stylesheet" href="http://localhost:3000/static/style/master.css">
     <title>Register</title>
 </head>
-<body>
+<body onload="loadAnimationState()">
     <%- include('./components/navbar.ejs') %>
 
     <!-- Loads register page -->
-    <%- registerPage %>
+    <div class="transition-container">
+        <%- registerPage %>
+    </div>
 
     <!-- Checks which field made a problem -->
     <% if (badFields && message) { %>

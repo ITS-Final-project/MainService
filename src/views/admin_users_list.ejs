@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Import Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Import Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+    <!-- Import admin dashboard css -->
+    <link href="http://localhost:3000/static/style/admin_dash.css" rel="stylesheet">
+
+    <!-- Import background gradient css -->
+    <link href="http://localhost:3000/static/style/background.css" rel="stylesheet">
+    
+    <!-- Import admin filter css -->
+    <link href="http://localhost:3000/static/style/admin_filter.css" rel="stylesheet">
+
+    <!-- Import JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Import full JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <!-- Import master js -->
+    <script src="http://localhost:3000/static/js/master.js"></script>
+
+    <title>Admin panel - users</title>
+</head>
+<body onload="loadAnimationState()">
+    
+    <%- include('./components/navbar.ejs') %>
+
+    <div class="container p-3">
+        <div class="card filter-card">
+            <div class="d-flex">
+                <div class="input-group m-3">
+                    <label for="username" class="input-group-text"><i class="bi bi-person-fill"></i></label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Korisničko ime">
+                </div>
+                <div class="input-group m-3">
+                    <label for="email" class="input-group-text">@</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="input-group m-3">
+                    <label for="dropdownMenuButton" class="input-group-text"><i class="bi bi-person-lines-fill"></i></label>
+                    <div class="dropdown w-75">
+                        <button class="btn btn-select form-control dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            Uloge
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <div class="form-check">
+                                        <input type="checkbox" value="admin" class="form-check-input" id="admin" name="roles">
+                                        <label class="form-check-label" for="admin">Administrator</label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <div class="form-check">
+                                        <input type="checkbox" value="user" class="form-check-input" id="user" name="roles">
+                                        <label class="form-check-label" for="user">Korisnik</label>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <button class="btn btn-primary" onclick="searchUsers(0)"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="card table-card-container mt-3">
+            <div class="card-header">
+                <div class="d-flex justify-content-between">
+                    <h4 class="display-6"><i class="bi bi-person-lines-fill"></i> Korisnici</h4>
+                    <button data-bs-toggle="modal" data-bs-target="#newUserModal" class="btn btn-add" ><i class="bi bi-person-plus"></i> Novi</button>
+                </div>
+            </div>
+            <div class="card-body table-card">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Korisničko ime</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Uloge</th>
+                            <th scope="col">Datum registracije</th>
+                            <th scope="col">Akcije</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body">
+                        <!-- Here come user rows (user.js) -->
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-center" >
+                    <nav aria-label="User pagination">
+                    <ul class="pagination" id="pagination">
+                        <!-- Here come pagination numbers (user.js) -->
+                    </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New user modal -->
+    <!-- This modal has a static backdrop, meaning it cannot be closed by clicking on the side -->
+    <div class="modal fade" id="newUserModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="newUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="newUserModalLabel">Novi korisnik</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/admin/user/create" method="post">
+            <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="input-group">
+                                <label for="username" class="input-group-text"><i class="bi bi-person-fill"></i></label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Korisničko ime">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group">
+                                <label for="email" class="input-group-text">@</label>
+                                <input required type="text" class="form-control" id="email" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="input-group">
+                                <label for="password" class="input-group-text"><i class="bi bi-key"></i></label>
+                                <input required type="text" class="form-control" id="password" name="password" placeholder="Lozinka">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group">
+                                <label for="cpassword" class="input-group-text"><i class="bi bi-key-fill"></i></label>
+                                <input required type="text" class="form-control" id="cpassword" name="cpassword" placeholder="Potvrdite lozinku">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Admin or not -->
+                        <div class="col-6">
+                            <div class="form-check">
+                                <label class="form-check-label" for="admin">Administrator</label>
+                                <input type="checkbox" class="form-check-input" id="admin" name="admin" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+                    <button type="submit" class="btn btn-primary">Kreiraj korisnika</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+
+    <script src="http://localhost:3000/static/js/users.js"></script>
+
+    <%- include('./components/footer.ejs') %>
+</body>
+</html>
