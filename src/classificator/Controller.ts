@@ -4,6 +4,7 @@ import axios from 'axios';
 import { USSecret } from '../configuration/secretConfiguration';
 import { AuthorizationHandler } from '../authorization/authorization';
 import { AuthenticationHandler } from '../authentication/authentication';
+import { ClassificatorService } from './Service';
 
 const router = express.Router();
 
@@ -12,9 +13,20 @@ export class ClassificatorController {
     private _authorizationHandler: AuthorizationHandler;
     private _authenticationHandler: AuthenticationHandler;
 
+    private _classificatorService: ClassificatorService;
+
     private constructor(authorizationHandler?: AuthorizationHandler, authenticationHandler?: AuthenticationHandler) {
         this._authorizationHandler = authorizationHandler || AuthorizationHandler.getInstance();
         this._authenticationHandler = authenticationHandler || AuthenticationHandler.getInstance();
+        this._classificatorService = ClassificatorService.getInstance();
+
+        router.get('/service/check', (req, res) => {
+            this._classificatorService.checkService().then(() => {
+                res.status(200).send({ status: 'OK' });
+            }).catch(() => {
+                res.status(500).send({ status: 'ERROR' });
+            });
+        })
 
         router.get('/', this._authorizationHandler.checkSession(), (req, res) => {
             res.render('classificator.ejs', 
@@ -22,6 +34,37 @@ export class ClassificatorController {
                 title: 'Classificator',
                 user: this._authenticationHandler.getUser(req, res)
              });
+        });
+
+        router.post('/classify', this._authorizationHandler.checkSession(), (req, res) => {
+            // Get data from canvas
+            const data = req.body.imgBase64;
+            const trainMode = req.body.trainMode;
+            const label = req.body.label;
+
+            if (!data) {
+                res.status(400).send('No image data');
+                return;
+            }
+
+            console.log('Train mode: ' + trainMode);
+            console.log('Label: ' + label);
+
+            // Send data to classificator
+            axios.post('http://localhost:3002/classificator/classify', {
+                data: {
+                    imgBase64: data,
+                    trainMode: trainMode,
+                    label: label
+                }
+            }).then((response) => {
+                console.log(response.data);
+                res.status(200).send(response.data);
+            }).catch((error) => {
+                // console.log(error);
+                res.status(400).send(error);
+            });
+            
         });
     }
 

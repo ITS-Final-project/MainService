@@ -8,6 +8,7 @@ import { USSecret } from '../configuration/secretConfiguration';
 import { AuthenticationHandler } from '../authentication/authentication';
 import { AuthorizationHandler } from '../authorization/authorization';
 import { Decipher } from 'crypto';
+import { UserService } from './Service';
 
 const url = require('url');
 
@@ -19,10 +20,21 @@ export class UserController {
     private _authenticationHandler: AuthenticationHandler;
     private _authorizationHandler: AuthorizationHandler;
 
+    private _userService: UserService;
+
     private constructor(authenticationHandler?: AuthenticationHandler, authorizationHandler?: AuthorizationHandler) {
 
+        this._userService = UserService.getInstance();
         this._authenticationHandler = authenticationHandler || AuthenticationHandler.getInstance();
         this._authorizationHandler = authorizationHandler || AuthorizationHandler.getInstance();
+
+        router.get('/service/check', (req, res) => {
+            this._userService.checkService().then(() => {
+                res.status(200).send({ status: 'OK' });
+            }).catch(() => {
+                res.status(500).send({ status: 'ERROR' });
+            });
+        })
 
         //* Login
         //* Body: { token: string }
@@ -174,6 +186,49 @@ export class UserController {
 
        
         // ! ==================== POST METHODS ====================
+
+        router.post('/delete', (req, res) => {
+            // Check if password was passed
+            var password = req.body.password;
+
+            if (!password) {
+                res.redirect('/user/profile');
+                return;
+            }
+
+            // Get selfId from token 
+
+            var token = req.cookies.auth;
+
+            if (!token) {
+                res.redirect('/');
+                return;
+            }
+
+            var decodedToken = jwtConfiguration.verify(token, new USSecret()) as JwtPayload;
+
+            if (!decodedToken) {
+                res.redirect('/');
+                return;
+            }
+
+            var user = decodedToken.user;
+
+            if (!user) {
+                res.redirect('/');
+                return;
+            }
+
+            var id = user.id;
+
+            this._userService.deleteUser(id, password).then(() => {
+                res.clearCookie('auth');
+                res.redirect('/');
+            }).catch(() => {
+                res.redirect('/user/profile');
+            });
+
+        })
 
         router.post('/edit', (req, res) => {
             var token = req.cookies.auth;

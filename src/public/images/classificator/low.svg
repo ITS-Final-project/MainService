@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 48.593 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <view id="view-1" viewBox="141.234 257.035 1.623 1.082">
+      <title>View 1</title>
+    </view>
+  </defs>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="24.784" cy="59.578" rx="14.069" ry="14.069"/>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="24.784" cy="138.041" rx="14.069" ry="14.069"/>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="24.784" cy="181.061" rx="14.069" ry="14.069"/>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="24.784" cy="221.645" rx="14.069" ry="14.069"/>
+  <g transform="matrix(1, 0, 0, 1, -109.766228, 43.397789)">
+    <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(157, 0, 0);" cx="133.928" cy="41.396" rx="4.058" ry="4.058"/>
+    <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(157, 0, 0);" cx="133.928" cy="54.512" rx="4.058" ry="4.058"/>
+    <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(157, 0, 0);" cx="133.928" cy="67.628" rx="4.058" ry="4.058"/>
+  </g>
+</svg>

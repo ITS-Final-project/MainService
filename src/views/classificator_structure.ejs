@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Import Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Import Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!-- Import admin classificator css -->
+    <link href="http://localhost:3000/static/style/classificator_structure.css" rel="stylesheet">
+    
+    <!-- Import background gradient css -->
+    <link href="http://localhost:3000/static/style/background.css" rel="stylesheet">
+    
+    <!-- Import JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Import full JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <!-- Import master js -->
+    <script src="http://localhost:3000/static/js/master.js"></script>
+
+    <title>Admin - CStructure</title>
+</head>
+    <body>
+        <%- include('./components/navbar.ejs') %>
+
+        <div class="container">
+            <div class="container">
+                <div class="card main-card">
+                    <div class="card-header">
+                        <h1><i class="bi bi-laptop"></i> Informacije o klasifikatoru</h1>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="stats d-flex justify-content-between">
+                            <div class="m-3">
+                                <p class="otherStat"><i class="bi bi-layer-backward"></i> Ulazni sloj: <span id="inLayer">xxx</span>  neurona </p>
+                                <p class="otherStat"><i class="bi bi-layer-forward"></i> Izlazni sloj: <span id="outLayer">xxx</span> neurona </p>
+                            </div>
+                            <div class="m-3">
+                                <p class="otherStat"><i class="bi bi-list-ol"></i> Ukupno slojeva: <span id="countLayer">xxx</span> </p>
+                                <p class="otherStat"><i class="bi bi-bullseye"></i> Preciznost: <span id=accuracy>xxx</span>% </p>
+                            </div>
+                            <div class="m-3">
+                                <p class="otherStat"><i class="bi bi-arrow-repeat"></i> LR: <span id="lr">xxx</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class="d-flex" id="modelStructure">
+                            <!-- Pogledati modelStructure.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="http://localhost:3000/static/js/modelStructure.js"></script>
+
+        <%- include('./components/footer.ejs') %>
+    </body>
+</html>

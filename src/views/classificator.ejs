@@ -36,9 +36,11 @@
                         <button id="brush-control" onclick="toggleMode('brush')" class="btn btn-control btn-active shadow-none"><i class="bi bi-brush"></i></button>
                         <button id="eraser-control" onclick="toggleMode('eraser')" class="btn btn-control shadow-none"><i class="bi bi-eraser"></i></button>
                         <button id="clear-control" onclick="promptClear()" class="btn btn-control btn-clear shadow-none"><i class="bi bi-trash"></i></button>
+                        <button id="train-control" onclick="toggleMode('train')" class="btn btn-control btn-train shadow-none"><i class="bi bi-arrow-repeat"></i></button>
+                        <input disabled type="number" id="train-input" class="label-input" placeholder="Epochs" min="0" max="9" value="1">
                     </div>
                     <div class="canvas-controls">
-                        <button id="classify-control" onclick="classify()" class="btn btn-control btn-classify shadow-none"><i class="bi bi-arrow-right"></i></button>
+                        <button id="classify-control" onclick="colorInvert(); classify()" class="btn btn-control btn-classify shadow-none"><i class="bi bi-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="canvas-grid-container">
@@ -49,7 +51,7 @@
             <div class="card right-container">
                 <h1>ITS Character Classificator</h1>
                 <div class="response-output">
-                    <p id="result">A</p>
+                    <p id="result">2</p>
                 </div>
             </div>
         </div>

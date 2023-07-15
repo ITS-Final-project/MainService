@@ -168,6 +168,61 @@
         </div>
     </div>
 
+
+    <!-- Edit user modal -->
+    <!-- This modal has a static backdrop, meaning it cannot be closed by clicking on the side -->
+    <div class="modal fade" id="editUserModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="editUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="editUserModal">Izmeni korisnika</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/admin/user/create" method="post">
+            <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="input-group">
+                                <label for="username" class="input-group-text"><i class="bi bi-person-fill"></i></label>
+                                <input type="text" class="form-control" id="editUsername" name="username" placeholder="Korisničko ime">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group">
+                                <label for="email" class="input-group-text">@</label>
+                                <input required type="text" class="form-control" id="editEmail" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="input-group">
+                                <label for="password" class="input-group-text"><i class="bi bi-key"></i></label>
+                                <input required type="text" class="form-control" id="editPassword" name="password" placeholder="Lozinka">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Admin or not -->
+                        <div class="col-6">
+                            <div class="form-check">
+                                <label class="form-check-label" for="admin">Administrator</label>
+                                <input type="checkbox" class="form-check-input" id="admin" name="admin" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+                    <button type="submit" class="btn btn-primary">Kreiraj korisnika</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+
+
+    <input type="hidden" id="selfUsername" value="<%= user.username %>">
     <script src="http://localhost:3000/static/js/users.js"></script>
 
     <%- include('./components/footer.ejs') %>

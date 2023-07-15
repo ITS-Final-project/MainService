@@ -24,7 +24,7 @@ body {
     -webkit-backdrop-filter: blur(7.7px);
     border: 1px solid rgba(255, 255, 255, 0.24);
 
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeInLeft 0.8s ease-in-out;
 }
 
 .right-container {
@@ -38,8 +38,63 @@ body {
     -webkit-backdrop-filter: blur(7.7px);
     border: 1px solid rgba(255, 255, 255, 0.24);
 
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeInRight 0.8s ease-in-out;
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOutLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+}
+
+@keyframes fadeOutRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+
+
 
 .info-text{
     text-align: justify;
@@ -85,14 +140,5 @@ body {
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
     border: 1px solid rgba(182, 255, 243, 0.24);
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 

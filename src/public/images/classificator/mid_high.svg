@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <path style="stroke: rgb(0, 0, 0); paint-order: stroke; fill: none; stroke-dasharray: 4; stroke-width: 2px; transform-box: fill-box; transform-origin: 50% 50%;" d="M 66.668 45.73 L 143.398 25.866"/>
+  <path style="stroke: rgb(0, 0, 0); paint-order: stroke; fill: none; stroke-dasharray: 4; stroke-width: 2px; transform-origin: 105.033px 75.715px;" d="M 66.668 45.73 L 143.398 105.699"/>
+  <path style="stroke: rgb(0, 0, 0); paint-order: stroke; fill: none; stroke-dasharray: 4; stroke-width: 2px; transform-origin: 105.033px 98.197px;" d="M 66.668 45.73 L 143.398 150.665"/>
+  <path style="stroke: rgb(0, 0, 0); paint-order: stroke; fill: none; stroke-dasharray: 4; stroke-width: 2px; transform-origin: 105.033px 118.918px;" d="M 66.668 45.73 L 143.398 192.108"/>
+  <path style="stroke: rgb(0, 0, 0); paint-order: stroke; fill: none; stroke-dasharray: 4; stroke-width: 2px; transform-origin: 105.033px 142.7px;" d="M 66.668 45.729 L 143.398 239.672"/>
+  <path style="stroke: rgb(0, 0, 0); paint-order: stroke; fill: none; stroke-dasharray: 4; stroke-width: 2px; transform-origin: 105.033px 154.277px;" d="M 66.668 45.73 L 143.398 262.825"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-box: fill-box; transform-origin: 50% 50%;" d="M 66.668 160.443 L 143.398 25.866"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 132.818px;" d="M 66.668 159.936 L 143.398 105.699"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.47; transform-origin: 105.033px 155.301px;" d="M 66.668 159.936 L 143.398 150.665"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 176.022px;" d="M 66.668 159.936 L 143.398 192.108"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 199.804px;" d="M 66.668 159.936 L 143.398 239.672"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 211.634px;" d="M 66.668 160.443 L 143.398 262.825"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 157.255px;" d="M 66.668 208.809 L 143.398 105.699"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 181.691px;" d="M 66.668 208.809 L 143.398 154.572"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.47; transform-origin: 105.033px 208.694px;" d="M 66.668 208.809 L 143.398 208.579"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 237.139px;" d="M 66.668 208.809 L 143.398 265.469"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 117.224px;" d="M 66.668 208.579 L 143.398 25.866"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 224.24px;" d="M 66.668 208.809 L 143.398 239.672"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.47; transform-origin: 105.033px 180.586px;" d="M 66.668 255.471 L 143.398 105.699"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 205.022px;" d="M 66.668 255.471 L 143.398 154.572"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 232.026px;" d="M 66.668 255.471 L 143.398 208.58"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 255.001px;" d="M 66.668 255.471 L 143.398 254.53"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 140.199px;" d="M 66.668 254.53 L 143.398 25.866"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 259.47px;" d="M 66.668 255.471 L 143.398 263.469"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 75.828px;" d="M 66.668 125.79 L 143.398 25.866"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 115.744px;" d="M 66.668 125.79 L 143.398 105.699"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 138.228px;" d="M 66.668 125.79 L 143.398 150.665"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 158.95px;" d="M 66.668 125.79 L 143.398 192.108"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 182.733px;" d="M 66.668 125.79 L 143.398 239.672"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-dasharray: 20; stroke-opacity: 0.5; transform-origin: 105.033px 195.632px;" d="M 66.668 125.79 L 143.398 265.469"/>
+</svg>

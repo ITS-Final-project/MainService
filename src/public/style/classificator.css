@@ -36,6 +36,20 @@ body {
     border-bottom: solid 1px #ebebeb;
 }
 
+.label-input{
+    height: 45px;
+    border-radius: 5px;
+    text-align: center;
+
+    border: solid 1px #ced4da;
+    background-color: #f8f9fa;
+}
+
+.label-input:focus, .label-input:active{
+    border: solid 1px #ced4da;
+    background-color: #f8f9fa;
+}
+
 .btn-active{
     transition: all 0.2s;
     background-color: #212529;

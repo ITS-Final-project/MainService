@@ -2,10 +2,10 @@ function checkService(service){
     lockButton(service);
 
     if (service === 'us') {
-        url = 'http://localhost:3001/us/service/check'
+        url = 'http://localhost:3000/user/service/check'
     }
     else if (service === 'py') {
-        url = 'http://localhost:3002/py/service/check'
+        url = 'http://localhost:3000/classificator/service/check'
     }
     else {
         return false;

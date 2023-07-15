@@ -7,6 +7,10 @@ $(document).ready(function(){
     searchUsers(0);
 });
 
+function getUser(id){
+    
+}
+
 function searchUsers(pagenumber){
 
     countUsers();
@@ -148,12 +152,17 @@ function addRow(data){
     // Fix the date
     created = created.substring(0, 10);
 
+    var selfUsername = document.getElementById("selfUsername").value;
+
     var row = "<tr>";
     row += "<td>" + username + "</td>";
     row += "<td>" + email + "</td>";
     row += "<td>" + paintRoles(roles) + "</td>";
     row += "<td>" + created + "</td>";
-    row += "<td><a href='/admin/user/edit/" + username + "'>Edit</a> <a href='/admin/user/delete?id=" + id + "'>Delete</a></td>";
+    if (!(username == selfUsername))
+        row += "<td><button class='btn p-0' onclick='getUser(\""+id+"\")'>Izmeni</button> <a onclick='return confirm(\"Obriši nalog?\")' href='/admin/user/delete?id=" + id + "'>Obriši</a></td>";
+    else
+        row += "<td></td>";
     row += "</tr>";
 
     return row;
@@ -186,4 +195,27 @@ function addRows(data){
     for (var i = 0; i < data.length; i++){
         tbody.innerHTML += addRow(data[i]);
     }
+}
+
+
+function getUser(id){
+    // href='/admin/user/edit?id=" + id + "'
+
+    var url = "http://localhost:3000/admin/user/get";
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: {
+            id: id
+        },
+        success: function(data){
+            openEditModal(data);
+        }
+    });
+}
+
+function openEditModal(data){
+    $('#editUserModal').modal('show');
+
 }

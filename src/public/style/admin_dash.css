@@ -75,3 +75,44 @@ body {
 .info-text{
     font-size: 12px;
 }
+
+.logs-card{
+    animation: fadeInLeft 0.2s ease-in-out;
+}
+
+.cl-card{
+    animation: fadeInLeft 0.4s ease-in-out;
+}
+
+.users-card{
+    animation: fadeInLeft 0.8s ease-in-out;
+}
+
+.reg-card{
+    animation: fadeInLeft 0.4s ease-in-out;
+}
+
+.stats-card{
+    animation: fadeInRight 0.4s ease-in-out;
+}
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
