@@ -9,6 +9,8 @@ import jwtConfiguration from '../configuration/jwtConfiguration';
 import { UserService } from '../user/Service';
 import { AdminService } from './Service';
 
+import { CredsConfiguration } from '../configuration/credsConfigurations';
+
 const url = require('url');
 
 const router = express.Router();
@@ -22,6 +24,9 @@ export class AdminController {
     private _userService: UserService;
     private _adminService: AdminService;
 
+    private US_URL = CredsConfiguration.US_HOST + ':' + CredsConfiguration.US_PORT;
+    private PY_URL = CredsConfiguration.PY_HOST + ':' + CredsConfiguration.PY_PORT;
+
     private constructor(authenticationHandler?: AuthenticationHandler, authorizationHandler?: AuthorizationHandler) {
 
         this._userService = UserService.getInstance();
@@ -32,7 +37,7 @@ export class AdminController {
         router.get('/classificator/structure', this._authorizationHandler.checkRole('admin'), this._authorizationHandler.getTempToken('us'), (req, res) => {
             const sendToken = jwtConfiguration.sign({send: true}, new USSecret())
 
-            axios.get('http://localhost:3002/structure/get', {
+            axios.get(`${this.PY_URL}/structure/get`, {
                 data: {
                     token: sendToken
                 }
@@ -124,7 +129,7 @@ export class AdminController {
 
             var createToken = jwtConfiguration.sign({username: username, email: email, password: password, roles: roles}, new USSecret());
 
-            axios.post('http://localhost:3001/user/create', {
+            axios.post(`${this.US_URL}/user/create`, {
                 token: createToken,
             }).then((response) => {
                 var createdUser = response.data;

@@ -6,6 +6,8 @@ import { AuthorizationHandler } from '../authorization/authorization';
 import { AuthenticationHandler } from '../authentication/authentication';
 import { ClassificatorService } from './Service';
 
+import { CredsConfiguration } from '../configuration/credsConfigurations';
+
 const router = express.Router();
 
 export class ClassificatorController {
@@ -14,6 +16,8 @@ export class ClassificatorController {
     private _authenticationHandler: AuthenticationHandler;
 
     private _classificatorService: ClassificatorService;
+
+    private PY_URL = CredsConfiguration.PY_HOST + ':' + CredsConfiguration.PY_PORT;
 
     private constructor(authorizationHandler?: AuthorizationHandler, authenticationHandler?: AuthenticationHandler) {
         this._authorizationHandler = authorizationHandler || AuthorizationHandler.getInstance();
@@ -51,7 +55,7 @@ export class ClassificatorController {
             console.log('Label: ' + label);
 
             // Send data to classificator
-            axios.post('http://localhost:3002/classificator/classify', {
+            axios.post(`${this.PY_URL}/classificator/classify`, {
                 data: {
                     imgBase64: data,
                     trainMode: trainMode,

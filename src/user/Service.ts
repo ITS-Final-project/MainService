@@ -3,8 +3,12 @@ import jwtConfiguration from '../configuration/jwtConfiguration';
 import { USSecret } from '../configuration/secretConfiguration';
 import { JwtPayload } from 'jsonwebtoken';
 
+import { CredsConfiguration } from '../configuration/credsConfigurations';
+
 export class UserService {
     private static _instance: UserService;
+
+    private US_URL = CredsConfiguration.US_HOST + ':' + CredsConfiguration.US_PORT;
 
     public static getInstance(): UserService {
         if (!UserService._instance) {
@@ -20,7 +24,7 @@ export class UserService {
         return new Promise((resolve, reject) => {
             const token = jwtConfiguration.sign({id: id}, new USSecret());
 
-            axios.get('http://localhost:3001/user/get', {
+            axios.get(`${this.US_URL}/user/get`, {
                 data: {
                     token: token
                 }
@@ -62,7 +66,7 @@ export class UserService {
 
             var sendToken = jwtConfiguration.sign({deleteId: usedId, password: password}, new USSecret());
 
-            axios.post('http://localhost:3001/user/delete', {
+            axios.post(`${this.US_URL}/user/delete`, {
                 token: sendToken,
             }).then((response) => {
 
@@ -86,8 +90,11 @@ export class UserService {
     }
 
     public async checkService(){
+
+        console.log('US_URL: ' + this.US_URL)
+
         return new Promise((resolve, reject) => {
-            axios.get('http://localhost:3001/us/service/check').then((response) => {
+            axios.get(`${this.US_URL}/us/service/check`).then((response) => {
                 resolve(response.data);
             }).catch((error) => {
                 reject(error);

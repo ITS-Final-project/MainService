@@ -7,8 +7,9 @@ import { USSecret } from '../configuration/secretConfiguration';
 
 import { AuthenticationHandler } from '../authentication/authentication';
 import { AuthorizationHandler } from '../authorization/authorization';
-import { Decipher } from 'crypto';
 import { UserService } from './Service';
+
+import { CredsConfiguration } from '../configuration/credsConfigurations';
 
 const url = require('url');
 
@@ -21,6 +22,9 @@ export class UserController {
     private _authorizationHandler: AuthorizationHandler;
 
     private _userService: UserService;
+
+
+    private US_URL = CredsConfiguration.US_HOST + ':' + CredsConfiguration.US_PORT;
 
     private constructor(authenticationHandler?: AuthenticationHandler, authorizationHandler?: AuthorizationHandler) {
 
@@ -42,7 +46,7 @@ export class UserController {
         //* Sends request to user service to get login page
         router.get('/login', (req, res) => {
             var token = jwtConfiguration.sign({ data: 'login' }, new USSecret());
-            axios.get('http://localhost:3001/user/login', {
+            axios.get(`${this.US_URL}/user/login`, {
                 data: {
                     token: token
                 }                    
@@ -74,7 +78,7 @@ export class UserController {
         router.get('/register', (req, res) => {
             var token = jwtConfiguration.sign({ data: 'register' }, new USSecret());
 
-            axios.get('http://localhost:3001/user/register', {
+            axios.get(`${this.US_URL}/user/register`, {
                 data: {
                     token: token
                 }                    
@@ -110,7 +114,7 @@ export class UserController {
                 return;
             }
 
-            axios.post('http://localhost:3001/user/logout', {
+            axios.post(`${this.US_URL}/user/logout`, {
                 token: token
             }).then((response) => {
                 res.clearCookie('auth');
@@ -142,7 +146,7 @@ export class UserController {
                 return;
             }
 
-            axios.get('http://localhost:3001/user/profile', {
+            axios.get(`${this.US_URL}/user/profile`, {
                 data: {
                     token: token
                 }
@@ -254,7 +258,7 @@ export class UserController {
 
             var editToken = jwtConfiguration.sign({ body: req.body, id: user.id }, new USSecret());
 
-            axios.post('http://localhost:3001/user/edit', {
+            axios.post(`${this.US_URL}/user/edit`, {
                 token: editToken
             }).then((response) => {
                 var token = response.data.token;
@@ -299,7 +303,7 @@ export class UserController {
 
             var countToken = jwtConfiguration.sign({username: username, email: email, role: role}, new USSecret());
 
-            axios.post('http://localhost:3001/user/count', {
+            axios.post(`${this.US_URL}/user/count`, {
                 token: countToken,
             }).then((response) => {
                 var count = response.data;
@@ -340,7 +344,7 @@ export class UserController {
 
             var searchToken = jwtConfiguration.sign({username: userame, email: email, roles: roles, pagesize: pagesize, pagenumber: pagenumber}, new USSecret());
 
-            axios.post('http://localhost:3001/user/search', {
+            axios.post(`${this.US_URL}/user/search`, {
                 token: searchToken,
             }).then((response) => {
                 var searchedUsers = response.data;
@@ -373,7 +377,7 @@ export class UserController {
 
             var token = jwtConfiguration.sign({ body: body }, new USSecret());
 
-            axios.post('http://localhost:3001/user/login', {
+            axios.post(`${this.US_URL}/user/login`, {
                 token: token
             }).then((response) => {
                 var token = response.data.token;
@@ -415,7 +419,7 @@ export class UserController {
 
             var token = jwtConfiguration.sign({ body: body }, new USSecret());
             
-            axios.post('http://localhost:3001/user/register', {
+            axios.post(`${this.US_URL}/user/register`, {
                 token: token
             }).then((response) => {
                 var token = response.data.token;

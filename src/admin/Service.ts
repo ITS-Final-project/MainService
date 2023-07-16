@@ -2,8 +2,12 @@ import axios from "axios";
 import jwtConfiguration from "../configuration/jwtConfiguration";
 import { USSecret } from "../configuration/secretConfiguration";
 
+import { CredsConfiguration } from "../configuration/credsConfigurations";
+
 export class AdminService {
     private static _instance: AdminService;
+
+    private US_URL = CredsConfiguration.US_HOST + ':' + CredsConfiguration.US_PORT;
 
     public static getInstance(): AdminService {
         if (!AdminService._instance) {
@@ -18,7 +22,7 @@ export class AdminService {
     public async getRegStats(): Promise<any> {
         return new Promise((resolve, reject) => {
             const sendToken = jwtConfiguration.sign({send: true}, new USSecret())
-            axios.get('http://localhost:3001/user/regstats',
+            axios.get(`${this.US_URL}/user/regstats`,
                 {
                     data: {
                         token: sendToken
@@ -60,7 +64,7 @@ export class AdminService {
 
             const sendToken = jwtConfiguration.sign(signData, new USSecret())
 
-            axios.post('http://localhost:3001/user/edit',
+            axios.post(`${this.US_URL}/user/edit`,
                 {
                     token: sendToken
                 }

@@ -2,6 +2,8 @@ import { ISecret, USSecret } from "../configuration/secretConfiguration";
 import { JwtPayload } from "jsonwebtoken";
 import jwtConfiguration from "../configuration/jwtConfiguration";
 
+import { CredsConfiguration } from "../configuration/credsConfigurations";
+
 import axios, { Axios } from "axios";
 
 export interface IAuthorizationHandler {
@@ -16,6 +18,8 @@ export interface IAuthorizationHandler {
 export class AuthorizationHandler implements IAuthorizationHandler {
 
     private static _instance: AuthorizationHandler;
+
+    private US_URL = CredsConfiguration.US_HOST + ':' + CredsConfiguration.US_PORT;
 
     private constructor() { }
     
@@ -69,7 +73,7 @@ export class AuthorizationHandler implements IAuthorizationHandler {
                 return;
             }
 
-            axios.post('http://localhost:3001/user/role/check', {
+            axios.post(`${this.US_URL}/user/role/check`, {
                 token: token,
                 role: role
             }).then((response) => {
@@ -105,7 +109,7 @@ export class AuthorizationHandler implements IAuthorizationHandler {
                 return;
             }
 
-            axios.post('http://localhost:3001/session/verify', {
+            axios.post(`${this.US_URL}/session/verify`, {
                 token: token
             }).then((response) => {
                 var token = response.data.token;
@@ -162,7 +166,7 @@ export class AuthorizationHandler implements IAuthorizationHandler {
             }
 
             try {
-                axios.post('http://localhost:3001/api/temp/create', {
+                axios.post(`${this.US_URL}/api/temp/create`, {
                     token: token,
                 }).then((response) => {
                     var token = response.data.token;
