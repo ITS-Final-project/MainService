@@ -79,23 +79,61 @@
     font-weight: 700;
     text-transform: uppercase;
     color: var(--text-color);
-  }
+}
   
-  .wrapper > div {
+.wrapper > div {
     grid-area: 1/1/-1/-1;
-  }
+}
 
-  .top {
+.top {
     clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
-  }
+
+    animation: top-rand-motion 20s infinite;
+}
   
-  .bottom {
+.bottom {
     clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
     color: transparent;
     background: #1f2a37;
     background-clip: text;
     -webkit-background-clip: text;
-    transform: translateX(-0.04em) translateY(0.02em);
-    /* transform: translateY(0.04em); */
-  }
+
+    animation: bottom-rand-motion 20s infinite;
+}
+
+@keyframes bottom-rand-motion {
+    0% {
+      transform: translateX(-0.04em) translateY(0.02em);
+    }
+    25% {
+      transform: translateX(0.04em) translateY(-0.02em);
+    }
+    50% {
+      transform: translateX(-0.04em) translateY(0.02em);
+    }
+    75% {
+      transform: translateX(0.04em) translateY(-0.02em);
+    }
+    100% {
+      transform: translateX(-0.04em) translateY(0.02em);
+    }
+}
+
+@keyframes top-rand-motion {
+    0% {
+      transform: translateX(0.04em) translateY(-0.02em);
+    }
+    25% {
+      transform: translateX(-0.04em) translateY(0.02em);
+    }
+    50% {
+      transform: translateX(0.04em) translateY(-0.02em);
+    }
+    75% {
+      transform: translateX(-0.04em) translateY(0.02em);
+    }
+    100% {
+      transform: translateX(0.04em) translateY(-0.02em);
+    }
+}
   
