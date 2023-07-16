@@ -183,6 +183,34 @@ export class AdminController {
             });
         });
 
+        router.post('/user/edit', this._authorizationHandler.checkRole('admin'), (req, res) => {
+            var id = req.body.id;
+            var username = req.body.username;
+            var email = req.body.email;
+            var password = req.body.password;
+            var admin = req.body.admin;
+
+            var token = req.cookies.auth;
+
+            if (!token) {
+                res.redirect('/');
+                return;
+            }
+
+            if (!username || !email) {
+                res.status(400).send('Bad request');
+                return;
+            }
+
+            this._adminService.editUser(id, username, email, password, admin).then((editedUser) => {
+                res.redirect('/admin/users/list');
+            }).catch((error) => {
+                console.log(error);
+                res.redirect('/admin/users/list');
+            });
+            
+        });
+
     }
 
     public static getInstance(): AdminController {

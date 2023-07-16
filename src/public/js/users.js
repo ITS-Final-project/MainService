@@ -218,4 +218,21 @@ function getUser(id){
 function openEditModal(data){
     $('#editUserModal').modal('show');
 
+    var username = data.username;
+    var email = data.email;
+    var roles = data.roles;
+    var created = data.created;
+    var id = data.id;
+
+    console.log("roles: " + roles + " " + roles.includes("admin"));
+
+    var usernameField = document.getElementById("editUsername");
+    var emailField = document.getElementById("editEmail");
+    var adminField = document.getElementById("editAdmin");
+    var idField = document.getElementById("editId");
+
+    usernameField.value = username;
+    emailField.value = email;
+    idField.value = id;
+    adminField.checked = roles.includes("admin");
 }

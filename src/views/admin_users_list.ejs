@@ -178,13 +178,14 @@
             <h5 class="modal-title" id="editUserModal">Izmeni korisnika</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="/admin/user/create" method="post">
+        <form action="/admin/user/edit" method="post">
             <div class="modal-body">
                     <div class="row mb-3">
+                        <input type="hidden" id="editId" name="id">
                         <div class="col-6">
                             <div class="input-group">
                                 <label for="username" class="input-group-text"><i class="bi bi-person-fill"></i></label>
-                                <input type="text" class="form-control" id="editUsername" name="username" placeholder="Korisničko ime">
+                                <input required type="text" class="form-control" id="editUsername" name="username" placeholder="Korisničko ime">
                             </div>
                         </div>
                         <div class="col-6">
@@ -198,7 +199,7 @@
                         <div class="col-6">
                             <div class="input-group">
                                 <label for="password" class="input-group-text"><i class="bi bi-key"></i></label>
-                                <input required type="text" class="form-control" id="editPassword" name="password" placeholder="Lozinka">
+                                <input type="text" class="form-control" id="editPassword" name="password" placeholder="Lozinka">
                             </div>
                         </div>
                     </div>
@@ -207,14 +208,14 @@
                         <div class="col-6">
                             <div class="form-check">
                                 <label class="form-check-label" for="admin">Administrator</label>
-                                <input type="checkbox" class="form-check-input" id="admin" name="admin" autocomplete="off">
+                                <input type="checkbox" class="form-check-input" id="editAdmin" name="admin" autocomplete="off">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
-                    <button type="submit" class="btn btn-primary">Kreiraj korisnika</button>
+                    <button type="submit" class="btn btn-primary">Izmeni korisnika</button>
                 </div>
             </form>
         </div>
