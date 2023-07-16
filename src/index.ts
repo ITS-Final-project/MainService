@@ -43,6 +43,10 @@ app.get('/', (req, res) => {
     }
 );
 
+app.get('*', (req, res) => {
+    res.render('error_page.ejs', { user: AuthenticationHandler.getInstance().getUser(req, res) })
+})
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
     }

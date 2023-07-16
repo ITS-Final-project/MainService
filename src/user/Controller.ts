@@ -85,8 +85,7 @@ export class UserController {
 
                 if (!registerPage) {
                     console.log('Error');
-                    res.status(500).send('Internal server error');
-                    return;
+                    res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
                 }
                 res.render('register.ejs', 
                 { 
@@ -97,7 +96,7 @@ export class UserController {
                 });
             }).catch((error) => {
                 console.log(error);
-                res.status(500).send('Internal server error');
+                res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
             });
         })
 
@@ -308,14 +307,13 @@ export class UserController {
 
                 if (!count) {
                     console.log('Error');
-                    res.status(500).send('Internal server error');
-                    return;
+                    res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
                 }
 
                 res.json(count);
             }).catch((error) => {
                 console.log(error);
-                res.status(500).send('Internal server error');
+                res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
             });
 
         })
@@ -349,14 +347,13 @@ export class UserController {
 
                 if (!searchedUsers) {
                     console.log('Error');
-                    res.status(500).send('Internal server error');
-                    return;
+                    res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
                 }
 
                 res.json(searchedUsers);
             }).catch((error) => {
                 console.log(error);
-                res.status(500).send('Internal server error');
+                res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
             });
 
         })
