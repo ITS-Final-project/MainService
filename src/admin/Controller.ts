@@ -46,7 +46,7 @@ export class AdminController {
                 res.send(structure);
             }).catch((error) => {
                 console.log(error);
-                res.status(500).send('Internal server error');
+                res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
             });
         });
 
@@ -167,7 +167,7 @@ export class AdminController {
                 res.status(200).send(user);
             }).catch((error) => {
                 console.log(error);
-                res.status(500).send('Internal server error');
+                res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
             });
         });
 
@@ -184,7 +184,7 @@ export class AdminController {
                 res.status(200).send(stats);
             }).catch((error) => {
                 console.log(error);
-                res.status(500).send('Internal server error');
+                res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
             });
         });
 
