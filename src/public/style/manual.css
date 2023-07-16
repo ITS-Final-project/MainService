@@ -50,3 +50,46 @@ body {
     padding: 10px;
 }
 
+.fade-in{
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.fade-in-td-1 {
+    animation: fadeInTopDown 0.8s ease-in-out;
+    
+}
+
+.fade-in-td-2 {
+    animation: fadeInTopDown 1.8s ease-in-out;
+   
+}
+
+.fade-in-td-3 {
+    animation: fadeInTopDown 2.5s ease-in-out;
+    
+}
+
+.fade-in-td-4 {
+    animation: fadeInTopDown 3s ease-in-out;
+    
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInTopDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

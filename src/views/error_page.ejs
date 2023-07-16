@@ -19,6 +19,7 @@
     
     <!-- Import index js -->
     <script src="http://localhost:3000/static/js/index.js"></script>
+    <script src="http://localhost:3000/static/js/error_page.js"></script>
 
     <link href="http://localhost:3000/static/style/error.css" rel="stylesheet">
 
@@ -37,7 +38,7 @@
     <%- include('./components/navbar.ejs') %>
 
     <div class="container m-auto">
-        <div class="transition-container ">
+        <div class="transition-container" id="error-container">
             <div class="card main-container">
                 <!-- <img class="sky" src="http://localhost:3000/static/images/error/sky.jpg" alt="404" class="error-img"> -->
                 <div class="wrapper">
@@ -47,7 +48,7 @@
                 <div class="info-text-container mb-lg-5">
                     <h1 class="info-text-header">greška</h1>
                     <p class="info-text">Vratite se na početnu stranu</p>
-                    <a href="http://localhost:3000/" class="btn btn-control"><i class="bi bi-house"></i> Početna strana</a>
+                    <a onclick="getAnimationState(); return fadeOut()" href="http://localhost:3000/" class="btn btn-control"><i class="bi bi-house"></i> Početna strana</a>
                 </div>
             </div>
         </div>

@@ -137,4 +137,13 @@
       transform: translateX(0.04em) translateY(-0.02em);
     }
 }
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
   
