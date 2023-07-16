@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Import Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Import Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+    <!-- Import index css -->
+    <link href="http://localhost:3000/static/style/manual.css" rel="stylesheet">
+    
+    <!-- Import background gradient css -->
+    <link href="http://localhost:3000/static/style/background.css" rel="stylesheet">
+    
+    <!-- Import JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Import full JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    
+    <title>AI PAGE</title>
+</head>
+<body onload="loadAnimationState()">
+    
+    <%- include('./components/navbar.ejs') %>
+
+    <div class="container">
+        <div class="container">
+            <div class="card transparent-container mb-3">
+                <h1 class="text-center mt-3 mb-0 manual-header">Uputstvo</h1>
+                <div class="w-50 m-auto">
+                    <hr>
+                </div>
+                <p class="text-center manual-header-info mb-1">Uputstvo za korišćenje ITS klasifikatora</p>
+                <div class="d-flex justify-content-around w-50 m-auto p-0">
+                    <p class="text-center p-0">Verzija servisa: 0.1.1</p>
+                    <p class="text-center p-0">Ažurirano: 16.07.2023.</p>
+                </div>
+            </div>
+            <div class="card transparent-container mb-3">
+                <div class="grid-container">
+                    <div class="info-container p-3">
+                        <h5 class="text-center mt-3 mb-0">Dostupne alatke (kontrole klasifikatora)</h5>
+                        <div class="w-75 m-auto">
+                            <hr>
+                        </div>
+                        <p class="text-center">
+                            Da bi ste koristili klasifikator, potrebno je da odaberete opciju za crtanje u gornjem delu levog panela.
+                            Opcija za crtanje obeležena je ikonicom četkice (<i class="bi bi-brush"></i>). Obeležena alatka će dobiti crni okvir onda kada je obeležena.
+                            Za brisanje nanesenih piksela, obeležiti opciju za brisanje (<i class="bi bi-eraser"></i>). Potpuno brisanje polja za crtanje vrši se klikom
+                            na opciju obeleženom kantom (<i class="bi bi-trash"></i>). Ova opcija će dobiti crveni okvir. 
+                            Mod za treniranje mreže obeležen je ikonicom (<i class="bi bi-arrow-repeat"></i>). Polje za unošenje karaktera nalazi se sa desne strane 
+                            opcije za treniranje mreže. 
+                        </p>
+                    </div>
+                    <div class="image-container d-flex justify-content-center">
+                        <img class="m-auto w-75" src="http://localhost:3000/static/images/manual/controls.jpg" alt="ITS klasifikator" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="card transparent-container mb-3">
+                <div class="grid-container">
+                    <div class="image-container d-flex justify-content-center">
+                        <img class="m-auto w-100" src="http://localhost:3000/static/images/manual/main-page.jpg" alt="ITS klasifikator" class="img-fluid">
+                    </div>
+                    <div class="info-container p-3">
+                        <h5 class="text-center mt-3 mb-0">Crtanje</h5>
+                        <div class="w-75 m-auto">
+                            <hr>
+                        </div>
+                        <p class="text-center">
+                            Da bi nacrtali karakter, obeležite opciju za crtanje (<i class="bi bi-brush"></i>) i mišem prelazite preko označenog polja (levi panel),
+                            držeći pritisnut levi klik. Ako ste sve odradili kako treba, na mestu gde se nalazi miš bi trebali da se pojave crni pikseli.
+                            U slučaju da je potrebno, možete prikazati ili ugasiti grid, pritiskom dugme označenim ikonicom sa 9 kvadrata (<i class="bi bi-grid-3x3-gap-fill"></i>).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card transparent-container mb-3">
+                <div class="grid-container">
+                    <div class="info-container p-3">
+                        <h5 class="text-center mt-3 mb-0">Klasifikacija</h5>
+                        <div class="w-75 m-auto">
+                            <hr>
+                        </div>
+                        <p class="text-center">
+                            Klasifikacija nacrtanih karaktera vrši se pritiskom na plavo dugme na vrhu levog panela, označenog strelicom 
+                            (<i class="bi bi-arrow-right"></i>). Nakon klasifikacije, u panelu sa desne strane ('ITS Character Classificator') će se pojaviti
+                            rezultat klasifikacije. Nacrtani karakter će postati beo, umesto crn. Ako želite ponovo da klasifikujete novi karakter, morate
+                            da obrišete prethodni karakter pritiskom na dugme sa kantom (<i class="bi bi-trash"></i>).
+                            <br><br>
+                            * Klasifikaciju je trenutno moguće izvršiti samo na ciframa 0-9.
+                            Nakon detaljnog treniranja mreže, biće moguće klasifikovati i ostale karaktere.
+                            <br><br>
+                            <span class="text-danger">
+                                * Ova verzija servisa je u beta fazi i pravila klasifikacije važe i za treniranje mreže.
+                            </span>
+                        </p>
+                    </div>
+                    <div class="image-container d-flex justify-content-center">
+                        <img class="m-auto w-100" src="http://localhost:3000/static/images/manual/drawn.jpg" alt="ITS klasifikator" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="card transparent-container mb-3">
+                <div class="grid-container">
+                    <div class="image-container d-flex justify-content-center">
+                        <img class="m-auto w-50" src="http://localhost:3000/static/images/manual/train.jpg" alt="ITS klasifikator" class="img-fluid">
+                    </div>
+                    <div class="info-container p-3">
+                        <h5 class="text-center mt-3 mb-0">Treniranje</h5>
+                        <div class="w-75 m-auto">
+                            <hr>
+                        </div>
+                        <p class="text-center">
+                            Treniranje mreže vrši se pokretanjem moda za treniranje (<i class="bi bi-arrow-repeat"></i>). Nakon toga, potrebno je 
+                            da nacrtate željeni karakter i označite koji je to karakter u polju za unos oznake, pored dugmeta za mod treniranja.
+                            Nakon slanja podataka, mreža će obaviti treniranje na prosleđenom karakteru i vratiti rezultat treniranja. 
+                            <br><br>
+                            <span class="text-danger text-uppercase">
+                                * Za treniranje mreže, nemojte slati prazne podatke ili podatke koji nisu karakteri zbog bezbednosti matematičkog modela.
+                                Bezbednosna mera za ovaj problem će biti implementirana u narednim verzijama.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('./components/footer.ejs') %>
+</body>
+</html>

@@ -3,6 +3,7 @@
     margin: auto auto;
     position: relative;
     overflow: hidden;
+    padding: 10px;
 
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.41);
@@ -75,7 +76,7 @@
     place-content: center;
     background-color: var(--background-color);
     font-family: "Oswald", sans-serif;
-    font-size: clamp(1.5rem, 1rem + 18vw, 15rem);
+    font-size: clamp(1.5rem, 1rem + 15vw, 15rem);
     font-weight: 700;
     text-transform: uppercase;
     color: var(--text-color);

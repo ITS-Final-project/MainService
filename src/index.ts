@@ -43,6 +43,10 @@ app.get('/', (req, res) => {
     }
 );
 
+app.get('/manual', (req, res) => {
+    res.render('manual.ejs', { title: 'About', user: AuthenticationHandler.getInstance().getUser(req, res) });
+})
+
 app.get('*', (req, res) => {
     res.render('error_page.ejs', { user: AuthenticationHandler.getInstance().getUser(req, res) })
 })
