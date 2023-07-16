@@ -55,8 +55,7 @@ export class UserController {
 
                 if (!loginPage) {
                     console.log('Error');
-                    res.status(500).send('Internal server error');
-                    return;
+                    res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
                 }
 
                 res.render('login.ejs', 
@@ -66,8 +65,7 @@ export class UserController {
                     user: this._authenticationHandler.getUser(req, res)
                 });
             }).catch((error) => {
-                console.log(error);
-                res.status(500).send('Internal server error');
+                res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
             });
         })
 

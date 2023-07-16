@@ -1,0 +1,101 @@
+.main-container {
+    width: 75%;
+    margin: auto auto;
+    position: relative;
+    overflow: hidden;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.41);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.info-text-container{
+    text-align: center;
+    margin-top: -10px;
+}
+
+.info-text-header{
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1f2a37;
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+}
+
+.info-text{
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: #1f2a37;
+}
+
+.btn-control{
+    font-size: large;
+    color: #1f2a37;
+    /* Pill shaped */
+    border-radius: 60px;
+
+    border: 1px solid rgba(255, 255, 255, 0.24);
+
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-control:hover{
+    /* From https://css.glass */
+    transition: all 0.2s ease-in-out;
+
+    background: rgba(193, 252, 242, 0.44);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid rgba(182, 255, 243, 0.24);
+}
+
+/* ---------------------------------------- */
+
+:root {
+    /* --background-color: black; */
+    --text-color: hsl(0, 0%, 100%);
+  }
+
+.wrapper {
+    display: grid;
+    place-content: center;
+    background-color: var(--background-color);
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(1.5rem, 1rem + 18vw, 15rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-color);
+  }
+  
+  .wrapper > div {
+    grid-area: 1/1/-1/-1;
+  }
+
+  .top {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+  }
+  
+  .bottom {
+    clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+    color: transparent;
+    background: #1f2a37;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transform: translateX(-0.04em) translateY(0.02em);
+    /* transform: translateY(0.04em); */
+  }
+  
