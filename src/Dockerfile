@@ -13,8 +13,8 @@ EXPOSE 3000
 # USSURL is the URL of the User Service Server
 # USSPORT is the port of the User Service Server
 
-ENV USSURL http://localhost
-ENV USSPORT 3001
+ENV HOST http://localhost
+ENV PORT 3001
 ENV MS_SECRET=M6$@31@%WiLl834F0rMeH1re
 ENV US_SECRET=7h1$S3CrEtIsOuTT0Gue$$
 ENV PY_SECRET=A1w1iLl83c0M3$0m3@1r
