@@ -32,3 +32,5 @@ function loadAnimationState() {
         document.body.style.backgroundPosition = `0% 50%`;
     }, 5000)
 }
+
+// Ovo je novi komentar
