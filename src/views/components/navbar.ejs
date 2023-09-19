@@ -54,8 +54,8 @@
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a onclick="getAnimationState()" class="dropdown-item" href="/admin/logs">Logs</a></li>
-                  <li><a onclick="getAnimationState()" class="dropdown-item" href="/admin/users/list">Users</a></li>
+                  <li><a onclick="getAnimationState()" class="dropdown-item" href="/admin/logs">Logovi</a></li>
+                  <li><a onclick="getAnimationState()" class="dropdown-item" href="/admin/users/list">Korisnici</a></li>
                 </ul>
               </li>
             <% } %>
@@ -72,11 +72,11 @@
                   <%= user.username %>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/user/profile">Settings</a></li>
+                  <li><a class="dropdown-item" href="/user/profile">Profil</a></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a onclick="getAnimationState()" class="dropdown-item" href="/user/logout">Log out</a></li>
+                  <li><a onclick="getAnimationState()" class="dropdown-item" href="/user/logout">Odjavi se</a></li>
                 </ul>
               </li>
 
@@ -84,10 +84,10 @@
 
               <!-- If not logged in -->
               <li class="nav-item">
-                <a class="nav-link" onclick="getAnimationState()" href="/user/login">Log in</a>
+                <a class="nav-link" onclick="getAnimationState()" href="/user/login">Prijavi se</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="getAnimationState()" href="/user/register">Register</a>
+                <a class="nav-link" onclick="getAnimationState()" href="/user/register">Registruj nalog</a>
               </li>
 
             <% } %>

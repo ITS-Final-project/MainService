@@ -56,10 +56,10 @@ function initMainCanvas(canvas, ctx){
             ctx.clearRect(x * (canvas.width / W), y * (canvas.height / H), canvas.width / W, canvas.height / H);
         }
     }
-
+    
+    canvas.addEventListener("mousemove", moveListener);
     canvas.addEventListener("mousedown", downListener);
     canvas.addEventListener("mouseup", upListener);
-    canvas.addEventListener("mousemove", moveListener);
 }
 
 function initGridCanvas(canvas, ctx){
