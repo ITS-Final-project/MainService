@@ -1,0 +1,96 @@
+[
+  {
+    "timestamp": 1690728581586,
+    "level": "INFO",
+    "origin": "internal_log",
+    "action": "open",
+    "message": "Log file opened",
+    "logName": "log_1690728581568.json"
+  },
+  {
+    "origin": "HttpServer",
+    "action": "init",
+    "details": {
+      "serverType": "HttpServer",
+      "port": 3000
+    },
+    "level": "INFO",
+    "timestamp": 1690728581687
+  },
+  {
+    "origin": "route",
+    "action": "main",
+    "method": "GET",
+    "url": "/",
+    "path": "/",
+    "headers": {
+      "host": "localhost:3000",
+      "connection": "keep-alive",
+      "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Microsoft Edge\";v=\"115\", \"Chromium\";v=\"115\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183",
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "sec-fetch-site": "none",
+      "sec-fetch-mode": "navigate",
+      "sec-fetch-user": "?1",
+      "sec-fetch-dest": "document",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "en-US,en;q=0.9",
+      "cookie": "session=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uIjp7Il9pZCI6IjY0YzU1M2I3YTg1ZGI4ZTc0OWFkMDM3ZCIsImlkIjoiODM5N2E4MjYtNjZmNi00ZTdlLWE4ZDktMWQzZWM3OTM2OTg5IiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTg6MDA6MjMuMzIyWiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE4OjAwOjIzLjMyMloiLCJ0b2tlbiI6ImQ2eWN0cGx0cGNwcHh6MmdwN3gzayIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiIsInZhbGlkRnJvbSI6IjIwMjMtMDctMjlUMTg6MDA6MjMuMzIyWiIsInZhbGlkSG91cnMiOjEsInZhbGlkVG8iOiIyMDIzLTA3LTI5VDE5OjAwOjIzLjMyMloifSwiaWF0IjoxNjkwNjU2NzUwLCJleHAiOjE2OTA2NjAzNTB9.xzA4KmPs26MZMrp7qk42cyAKM8991eCO189GUYRYBEo; auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzZXNzaW9uIjp7ImlkIjoiNTBmYjU0MDctOWM4ZS00YWM1LWE1NzEtMzg1NjZkYjlhZDM4IiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTk6MDA6MjUuMTA4WiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE5OjAwOjI1LjEwOFoiLCJ0b2tlbiI6IjFmazJ1NDB2ZmcyZWlvcnAxd2dqbWwiLCJ1c2VySWQiOiI4YjgzNzEzNy0zNzhhLTQ5MDItYmQ4NS1jOWFkNTkwOWE2NzIiLCJ2YWxpZEZyb20iOiIyMDIzLTA3LTI5VDE5OjAwOjI1LjEwOFoiLCJ2YWxpZEhvdXJzIjoxLCJ2YWxpZFRvIjoiMjAyMy0wNy0yOVQyMDowMDoyNS4xMDhaIiwiX2lkIjoiNjRjNTYxYzlhODVkYjhlNzQ5YWQwMzdlIn0sImlkIjoiOGI4MzcxMzctMzc4YS00OTAyLWJkODUtYzlhZDU5MDlhNjcyIiwidXNlcm5hbWUiOiJBblRhc01lcyIsImVtYWlsIjoiYWtpdGFzZXZza2kxMTJAZ21haWwuY29tIn0sImlhdCI6MTY5MDY1NzIyNSwiZXhwIjoxNjkwNjYwODI1fQ.bQ4GS1Smo2r35YHHyTrtkdvlwjVkQcAXFmPXt781_lw; tempToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTk6MDc6MTYuODQzWiIsInRva2VuIjoiMXF5cTh3dXRrODFwa2duc2lzbzI0aWdudHN1ZDZreiIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiJ9LCJpYXQiOjE2OTA2NTc2MzYsImV4cCI6MTY5MDY2MTIzNn0.-GJTwVtyE-XbTWcnaCZ7dxN8a566AjtNTNrRkl_bXp8",
+      "if-none-match": "W/\"1c6d-w8JssV+QWQSEDanqwx7zbyiQnpk\""
+    },
+    "ip": "::1",
+    "cookies": {
+      "session": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uIjp7Il9pZCI6IjY0YzU1M2I3YTg1ZGI4ZTc0OWFkMDM3ZCIsImlkIjoiODM5N2E4MjYtNjZmNi00ZTdlLWE4ZDktMWQzZWM3OTM2OTg5IiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTg6MDA6MjMuMzIyWiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE4OjAwOjIzLjMyMloiLCJ0b2tlbiI6ImQ2eWN0cGx0cGNwcHh6MmdwN3gzayIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiIsInZhbGlkRnJvbSI6IjIwMjMtMDctMjlUMTg6MDA6MjMuMzIyWiIsInZhbGlkSG91cnMiOjEsInZhbGlkVG8iOiIyMDIzLTA3LTI5VDE5OjAwOjIzLjMyMloifSwiaWF0IjoxNjkwNjU2NzUwLCJleHAiOjE2OTA2NjAzNTB9.xzA4KmPs26MZMrp7qk42cyAKM8991eCO189GUYRYBEo",
+      "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzZXNzaW9uIjp7ImlkIjoiNTBmYjU0MDctOWM4ZS00YWM1LWE1NzEtMzg1NjZkYjlhZDM4IiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTk6MDA6MjUuMTA4WiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE5OjAwOjI1LjEwOFoiLCJ0b2tlbiI6IjFmazJ1NDB2ZmcyZWlvcnAxd2dqbWwiLCJ1c2VySWQiOiI4YjgzNzEzNy0zNzhhLTQ5MDItYmQ4NS1jOWFkNTkwOWE2NzIiLCJ2YWxpZEZyb20iOiIyMDIzLTA3LTI5VDE5OjAwOjI1LjEwOFoiLCJ2YWxpZEhvdXJzIjoxLCJ2YWxpZFRvIjoiMjAyMy0wNy0yOVQyMDowMDoyNS4xMDhaIiwiX2lkIjoiNjRjNTYxYzlhODVkYjhlNzQ5YWQwMzdlIn0sImlkIjoiOGI4MzcxMzctMzc4YS00OTAyLWJkODUtYzlhZDU5MDlhNjcyIiwidXNlcm5hbWUiOiJBblRhc01lcyIsImVtYWlsIjoiYWtpdGFzZXZza2kxMTJAZ21haWwuY29tIn0sImlhdCI6MTY5MDY1NzIyNSwiZXhwIjoxNjkwNjYwODI1fQ.bQ4GS1Smo2r35YHHyTrtkdvlwjVkQcAXFmPXt781_lw",
+      "tempToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTk6MDc6MTYuODQzWiIsInRva2VuIjoiMXF5cTh3dXRrODFwa2duc2lzbzI0aWdudHN1ZDZreiIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiJ9LCJpYXQiOjE2OTA2NTc2MzYsImV4cCI6MTY5MDY2MTIzNn0.-GJTwVtyE-XbTWcnaCZ7dxN8a566AjtNTNrRkl_bXp8"
+    },
+    "user": {
+      "username": "guest",
+      "email": "guest"
+    },
+    "level": "INFO",
+    "timestamp": 1690728603484
+  },
+  {
+    "origin": "route",
+    "action": "main",
+    "method": "GET",
+    "url": "/",
+    "path": "/",
+    "headers": {
+      "host": "localhost:3000",
+      "connection": "keep-alive",
+      "cache-control": "max-age=0",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183",
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "sec-fetch-site": "same-origin",
+      "sec-fetch-mode": "navigate",
+      "sec-fetch-user": "?1",
+      "sec-fetch-dest": "document",
+      "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Microsoft Edge\";v=\"115\", \"Chromium\";v=\"115\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "http://localhost:3000/user/login",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "en-US,en;q=0.9",
+      "cookie": "session=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uIjp7Il9pZCI6IjY0YzU1M2I3YTg1ZGI4ZTc0OWFkMDM3ZCIsImlkIjoiODM5N2E4MjYtNjZmNi00ZTdlLWE4ZDktMWQzZWM3OTM2OTg5IiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTg6MDA6MjMuMzIyWiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE4OjAwOjIzLjMyMloiLCJ0b2tlbiI6ImQ2eWN0cGx0cGNwcHh6MmdwN3gzayIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiIsInZhbGlkRnJvbSI6IjIwMjMtMDctMjlUMTg6MDA6MjMuMzIyWiIsInZhbGlkSG91cnMiOjEsInZhbGlkVG8iOiIyMDIzLTA3LTI5VDE5OjAwOjIzLjMyMloifSwiaWF0IjoxNjkwNjU2NzUwLCJleHAiOjE2OTA2NjAzNTB9.xzA4KmPs26MZMrp7qk42cyAKM8991eCO189GUYRYBEo; tempToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTk6MDc6MTYuODQzWiIsInRva2VuIjoiMXF5cTh3dXRrODFwa2duc2lzbzI0aWdudHN1ZDZreiIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiJ9LCJpYXQiOjE2OTA2NTc2MzYsImV4cCI6MTY5MDY2MTIzNn0.-GJTwVtyE-XbTWcnaCZ7dxN8a566AjtNTNrRkl_bXp8; auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzZXNzaW9uIjp7ImlkIjoiMWZiMTAwMjktOWE0Ny00MDk0LWE0ODAtNWIzNTY0MGYwMjBhIiwiY3JlYXRlZCI6IjIwMjMtMDctMzBUMTQ6NTA6MTUuODE1WiIsInVwZGF0ZWQiOiIyMDIzLTA3LTMwVDE0OjUwOjE1LjgxNVoiLCJ0b2tlbiI6IjV6MGZ0dHJpeTVjbGR4NXp3N3h5YSIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiIsInZhbGlkRnJvbSI6IjIwMjMtMDctMzBUMTQ6NTA6MTUuODE1WiIsInZhbGlkSG91cnMiOjEsInZhbGlkVG8iOiIyMDIzLTA3LTMwVDE1OjUwOjE1LjgxNVoiLCJfaWQiOiI2NGM2NzhhN2E4NWRiOGU3NDlhZDAzN2YifSwiaWQiOiI4YjgzNzEzNy0zNzhhLTQ5MDItYmQ4NS1jOWFkNTkwOWE2NzIiLCJ1c2VybmFtZSI6IkFuVGFzTWVzIiwiZW1haWwiOiJha2l0YXNldnNraTExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjkwNzI4NjE1LCJleHAiOjE2OTA3MzIyMTV9.NIV9r2fi8Hk4-4W79MNHt96buz_f3agXKxdIVLrAVIo",
+      "if-none-match": "W/\"1841-cTEv8ywmM3DkYbFSF8Y7wIAmpF4\""
+    },
+    "ip": "::1",
+    "cookies": {
+      "session": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uIjp7Il9pZCI6IjY0YzU1M2I3YTg1ZGI4ZTc0OWFkMDM3ZCIsImlkIjoiODM5N2E4MjYtNjZmNi00ZTdlLWE4ZDktMWQzZWM3OTM2OTg5IiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTg6MDA6MjMuMzIyWiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE4OjAwOjIzLjMyMloiLCJ0b2tlbiI6ImQ2eWN0cGx0cGNwcHh6MmdwN3gzayIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiIsInZhbGlkRnJvbSI6IjIwMjMtMDctMjlUMTg6MDA6MjMuMzIyWiIsInZhbGlkSG91cnMiOjEsInZhbGlkVG8iOiIyMDIzLTA3LTI5VDE5OjAwOjIzLjMyMloifSwiaWF0IjoxNjkwNjU2NzUwLCJleHAiOjE2OTA2NjAzNTB9.xzA4KmPs26MZMrp7qk42cyAKM8991eCO189GUYRYBEo",
+      "tempToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTk6MDc6MTYuODQzWiIsInRva2VuIjoiMXF5cTh3dXRrODFwa2duc2lzbzI0aWdudHN1ZDZreiIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiJ9LCJpYXQiOjE2OTA2NTc2MzYsImV4cCI6MTY5MDY2MTIzNn0.-GJTwVtyE-XbTWcnaCZ7dxN8a566AjtNTNrRkl_bXp8",
+      "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzZXNzaW9uIjp7ImlkIjoiMWZiMTAwMjktOWE0Ny00MDk0LWE0ODAtNWIzNTY0MGYwMjBhIiwiY3JlYXRlZCI6IjIwMjMtMDctMzBUMTQ6NTA6MTUuODE1WiIsInVwZGF0ZWQiOiIyMDIzLTA3LTMwVDE0OjUwOjE1LjgxNVoiLCJ0b2tlbiI6IjV6MGZ0dHJpeTVjbGR4NXp3N3h5YSIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiIsInZhbGlkRnJvbSI6IjIwMjMtMDctMzBUMTQ6NTA6MTUuODE1WiIsInZhbGlkSG91cnMiOjEsInZhbGlkVG8iOiIyMDIzLTA3LTMwVDE1OjUwOjE1LjgxNVoiLCJfaWQiOiI2NGM2NzhhN2E4NWRiOGU3NDlhZDAzN2YifSwiaWQiOiI4YjgzNzEzNy0zNzhhLTQ5MDItYmQ4NS1jOWFkNTkwOWE2NzIiLCJ1c2VybmFtZSI6IkFuVGFzTWVzIiwiZW1haWwiOiJha2l0YXNldnNraTExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjkwNzI4NjE1LCJleHAiOjE2OTA3MzIyMTV9.NIV9r2fi8Hk4-4W79MNHt96buz_f3agXKxdIVLrAVIo"
+    },
+    "user": {
+      "username": "AnTasMes",
+      "email": "akitasevski112@gmail.com"
+    },
+    "level": "INFO",
+    "timestamp": 1690728615843
+  }
+]

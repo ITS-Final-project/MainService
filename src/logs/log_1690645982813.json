@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": 1690645982829,
+    "level": "INFO",
+    "origin": "internal_log",
+    "action": "open",
+    "message": "Log file opened",
+    "logName": "log_1690645982813.json"
+  },
+  {
+    "origin": "HttpServer",
+    "action": "init",
+    "details": {
+      "serverType": "HttpServer",
+      "port": 3000
+    },
+    "level": "INFO",
+    "timestamp": 1690645982911
+  }
+]

@@ -1,0 +1,131 @@
+[
+  {
+    "timestamp": 1690644979107,
+    "level": "INFO",
+    "origin": "internal_log",
+    "action": "open",
+    "message": "Log file opened",
+    "logName": "log_1690644979090.json"
+  },
+  {
+    "origin": "HttpServer",
+    "action": "init",
+    "details": {
+      "serverType": "HttpServer",
+      "port": 3000
+    },
+    "level": "INFO",
+    "timestamp": 1690644979189
+  },
+  {
+    "origin": "route",
+    "action": "main",
+    "method": "GET",
+    "url": "/",
+    "path": "/",
+    "headers": {
+      "host": "localhost:3000",
+      "connection": "keep-alive",
+      "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Microsoft Edge\";v=\"115\", \"Chromium\";v=\"115\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183",
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "sec-fetch-site": "same-origin",
+      "sec-fetch-mode": "navigate",
+      "sec-fetch-user": "?1",
+      "sec-fetch-dest": "document",
+      "referer": "http://localhost:3000/manual",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "en-US,en;q=0.9",
+      "cookie": "auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzZXNzaW9uIjp7ImlkIjoiOTg3YThlNGUtNzdiMS00OWYzLTkxMjEtYWI1MWFlZTQ1MzQxIiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTQ6NDE6NTMuOTU4WiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE0OjQxOjUzLjk1OFoiLCJ0b2tlbiI6IjQ1b2E2aHVrb2dvNW9yejcwM2xteHMiLCJ1c2VySWQiOiI4YjgzNzEzNy0zNzhhLTQ5MDItYmQ4NS1jOWFkNTkwOWE2NzIiLCJ2YWxpZEZyb20iOiIyMDIzLTA3LTI5VDE0OjQxOjUzLjk1OFoiLCJ2YWxpZEhvdXJzIjoxLCJ2YWxpZFRvIjoiMjAyMy0wNy0yOVQxNTo0MTo1My45NThaIiwiX2lkIjoiNjRjNTI1MzFhODVkYjhlNzQ5YWQwMzdiIn0sImlkIjoiOGI4MzcxMzctMzc4YS00OTAyLWJkODUtYzlhZDU5MDlhNjcyIiwidXNlcm5hbWUiOiJBblRhc01lcyIsImVtYWlsIjoiYWtpdGFzZXZza2kxMTJAZ21haWwuY29tIn0sImlhdCI6MTY5MDY0MTcxMywiZXhwIjoxNjkwNjQ1MzEzfQ.eE7UagR51eDsMPnoFZ7u6rQ5pAr6MfzzSSB8hVg1K0w; tempToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTU6Mzg6MDcuNTU3WiIsInRva2VuIjoicGtzc3NuczNramhva3J4dDJ3b3BmOXVsY3NpM3FvNCIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiJ9LCJpYXQiOjE2OTA2NDUwODcsImV4cCI6MTY5MDY0ODY4N30.0wqJytyke3QoVZjhQlUAAP8BY_fi7HPv-3N7gSfm7Sw",
+      "if-none-match": "W/\"1c6d-w8JssV+QWQSEDanqwx7zbyiQnpk\""
+    },
+    "ip": "::1",
+    "cookies": {
+      "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzZXNzaW9uIjp7ImlkIjoiOTg3YThlNGUtNzdiMS00OWYzLTkxMjEtYWI1MWFlZTQ1MzQxIiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTQ6NDE6NTMuOTU4WiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE0OjQxOjUzLjk1OFoiLCJ0b2tlbiI6IjQ1b2E2aHVrb2dvNW9yejcwM2xteHMiLCJ1c2VySWQiOiI4YjgzNzEzNy0zNzhhLTQ5MDItYmQ4NS1jOWFkNTkwOWE2NzIiLCJ2YWxpZEZyb20iOiIyMDIzLTA3LTI5VDE0OjQxOjUzLjk1OFoiLCJ2YWxpZEhvdXJzIjoxLCJ2YWxpZFRvIjoiMjAyMy0wNy0yOVQxNTo0MTo1My45NThaIiwiX2lkIjoiNjRjNTI1MzFhODVkYjhlNzQ5YWQwMzdiIn0sImlkIjoiOGI4MzcxMzctMzc4YS00OTAyLWJkODUtYzlhZDU5MDlhNjcyIiwidXNlcm5hbWUiOiJBblRhc01lcyIsImVtYWlsIjoiYWtpdGFzZXZza2kxMTJAZ21haWwuY29tIn0sImlhdCI6MTY5MDY0MTcxMywiZXhwIjoxNjkwNjQ1MzEzfQ.eE7UagR51eDsMPnoFZ7u6rQ5pAr6MfzzSSB8hVg1K0w",
+      "tempToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTU6Mzg6MDcuNTU3WiIsInRva2VuIjoicGtzc3NuczNramhva3J4dDJ3b3BmOXVsY3NpM3FvNCIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiJ9LCJpYXQiOjE2OTA2NDUwODcsImV4cCI6MTY5MDY0ODY4N30.0wqJytyke3QoVZjhQlUAAP8BY_fi7HPv-3N7gSfm7Sw"
+    },
+    "user": {
+      "username": "AnTasMes",
+      "email": "akitasevski112@gmail.com"
+    },
+    "level": "INFO",
+    "timestamp": 1690645091788
+  },
+  {
+    "origin": "route",
+    "action": "main",
+    "method": "GET",
+    "url": "/",
+    "path": "/",
+    "headers": {
+      "host": "localhost:3000",
+      "connection": "keep-alive",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183",
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "sec-fetch-site": "same-origin",
+      "sec-fetch-mode": "navigate",
+      "sec-fetch-user": "?1",
+      "sec-fetch-dest": "document",
+      "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Microsoft Edge\";v=\"115\", \"Chromium\";v=\"115\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "http://localhost:3000/",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "en-US,en;q=0.9",
+      "cookie": "tempToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTU6Mzg6MDcuNTU3WiIsInRva2VuIjoicGtzc3NuczNramhva3J4dDJ3b3BmOXVsY3NpM3FvNCIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiJ9LCJpYXQiOjE2OTA2NDUwODcsImV4cCI6MTY5MDY0ODY4N30.0wqJytyke3QoVZjhQlUAAP8BY_fi7HPv-3N7gSfm7Sw",
+      "if-none-match": "W/\"1c6d-w8JssV+QWQSEDanqwx7zbyiQnpk\""
+    },
+    "ip": "::1",
+    "cookies": {
+      "tempToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTU6Mzg6MDcuNTU3WiIsInRva2VuIjoicGtzc3NuczNramhva3J4dDJ3b3BmOXVsY3NpM3FvNCIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiJ9LCJpYXQiOjE2OTA2NDUwODcsImV4cCI6MTY5MDY0ODY4N30.0wqJytyke3QoVZjhQlUAAP8BY_fi7HPv-3N7gSfm7Sw"
+    },
+    "user": {
+      "username": "guest",
+      "email": "guest"
+    },
+    "level": "INFO",
+    "timestamp": 1690645097682
+  },
+  {
+    "origin": "route",
+    "action": "main",
+    "method": "GET",
+    "url": "/",
+    "path": "/",
+    "headers": {
+      "host": "localhost:3000",
+      "connection": "keep-alive",
+      "cache-control": "max-age=0",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183",
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "sec-fetch-site": "same-origin",
+      "sec-fetch-mode": "navigate",
+      "sec-fetch-user": "?1",
+      "sec-fetch-dest": "document",
+      "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Microsoft Edge\";v=\"115\", \"Chromium\";v=\"115\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "http://localhost:3000/user/login",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "en-US,en;q=0.9",
+      "cookie": "tempToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTU6Mzg6MDcuNTU3WiIsInRva2VuIjoicGtzc3NuczNramhva3J4dDJ3b3BmOXVsY3NpM3FvNCIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiJ9LCJpYXQiOjE2OTA2NDUwODcsImV4cCI6MTY5MDY0ODY4N30.0wqJytyke3QoVZjhQlUAAP8BY_fi7HPv-3N7gSfm7Sw; auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzZXNzaW9uIjp7ImlkIjoiNWZiMDA1ZTEtY2IyNS00YzRkLTk1M2EtODA5YzU4MTU3Y2ExIiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTU6Mzk6MDQuODUxWiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE1OjM5OjA0Ljg1MVoiLCJ0b2tlbiI6InZnbndhZzF0NmVpcTRobHkwNmtmaiIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiIsInZhbGlkRnJvbSI6IjIwMjMtMDctMjlUMTU6Mzk6MDQuODUxWiIsInZhbGlkSG91cnMiOjEsInZhbGlkVG8iOiIyMDIzLTA3LTI5VDE2OjM5OjA0Ljg1MVoiLCJfaWQiOiI2NGM1MzI5OGE4NWRiOGU3NDlhZDAzN2MifSwiaWQiOiI4YjgzNzEzNy0zNzhhLTQ5MDItYmQ4NS1jOWFkNTkwOWE2NzIiLCJ1c2VybmFtZSI6IkFuVGFzTWVzIiwiZW1haWwiOiJha2l0YXNldnNraTExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjkwNjQ1MTQ0LCJleHAiOjE2OTA2NDg3NDR9.ufoYoBsR-c2d598JeSL_1q4qDcQtyfGk_AOi3uFSRso",
+      "if-none-match": "W/\"1841-cTEv8ywmM3DkYbFSF8Y7wIAmpF4\""
+    },
+    "ip": "::1",
+    "cookies": {
+      "tempToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTU6Mzg6MDcuNTU3WiIsInRva2VuIjoicGtzc3NuczNramhva3J4dDJ3b3BmOXVsY3NpM3FvNCIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiJ9LCJpYXQiOjE2OTA2NDUwODcsImV4cCI6MTY5MDY0ODY4N30.0wqJytyke3QoVZjhQlUAAP8BY_fi7HPv-3N7gSfm7Sw",
+      "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzZXNzaW9uIjp7ImlkIjoiNWZiMDA1ZTEtY2IyNS00YzRkLTk1M2EtODA5YzU4MTU3Y2ExIiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTU6Mzk6MDQuODUxWiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE1OjM5OjA0Ljg1MVoiLCJ0b2tlbiI6InZnbndhZzF0NmVpcTRobHkwNmtmaiIsInVzZXJJZCI6IjhiODM3MTM3LTM3OGEtNDkwMi1iZDg1LWM5YWQ1OTA5YTY3MiIsInZhbGlkRnJvbSI6IjIwMjMtMDctMjlUMTU6Mzk6MDQuODUxWiIsInZhbGlkSG91cnMiOjEsInZhbGlkVG8iOiIyMDIzLTA3LTI5VDE2OjM5OjA0Ljg1MVoiLCJfaWQiOiI2NGM1MzI5OGE4NWRiOGU3NDlhZDAzN2MifSwiaWQiOiI4YjgzNzEzNy0zNzhhLTQ5MDItYmQ4NS1jOWFkNTkwOWE2NzIiLCJ1c2VybmFtZSI6IkFuVGFzTWVzIiwiZW1haWwiOiJha2l0YXNldnNraTExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjkwNjQ1MTQ0LCJleHAiOjE2OTA2NDg3NDR9.ufoYoBsR-c2d598JeSL_1q4qDcQtyfGk_AOi3uFSRso"
+    },
+    "user": {
+      "username": "AnTasMes",
+      "email": "akitasevski112@gmail.com"
+    },
+    "level": "INFO",
+    "timestamp": 1690645144869
+  }
+]

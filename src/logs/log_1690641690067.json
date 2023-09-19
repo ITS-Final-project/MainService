@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp": 1690641690090,
+    "level": "INFO",
+    "origin": "internal_log",
+    "action": "open",
+    "message": "Log file opened",
+    "logName": "log_1690641690067.json"
+  }
+]

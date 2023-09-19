@@ -1,0 +1,58 @@
+[
+  {
+    "timestamp": 1690641707231,
+    "level": "INFO",
+    "origin": "internal_log",
+    "action": "open",
+    "message": "Log file opened",
+    "logName": "log_1690641707214.json"
+  },
+  {
+    "origin": "HttpServer",
+    "action": "init",
+    "details": {
+      "serverType": "HttpServer",
+      "port": 3000
+    },
+    "level": "INFO",
+    "timestamp": 1690641707314
+  },
+  {
+    "origin": "route",
+    "action": "main",
+    "method": "GET",
+    "url": "/",
+    "path": "/",
+    "headers": {
+      "host": "localhost:3000",
+      "connection": "keep-alive",
+      "cache-control": "max-age=0",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183",
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "sec-fetch-site": "same-origin",
+      "sec-fetch-mode": "navigate",
+      "sec-fetch-user": "?1",
+      "sec-fetch-dest": "document",
+      "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Microsoft Edge\";v=\"115\", \"Chromium\";v=\"115\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "http://localhost:3000/user/login",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "en-US,en;q=0.9",
+      "cookie": "tempToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTQ6MDg6MzUuMjEwWiIsInRva2VuIjoidXRpN2dwaHZlb2lpMDA5emlxNDQ1bGRwcGlwcGlwanV2IiwidXNlcklkIjoiOGI4MzcxMzctMzc4YS00OTAyLWJkODUtYzlhZDU5MDlhNjcyIn0sImlhdCI6MTY5MDYzOTcxNSwiZXhwIjoxNjkwNjQzMzE1fQ.0TgJAvINtwbTEQpxicLWga9X0rLoTVX9j4_-Lwztm1A; auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzZXNzaW9uIjp7ImlkIjoiOTg3YThlNGUtNzdiMS00OWYzLTkxMjEtYWI1MWFlZTQ1MzQxIiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTQ6NDE6NTMuOTU4WiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE0OjQxOjUzLjk1OFoiLCJ0b2tlbiI6IjQ1b2E2aHVrb2dvNW9yejcwM2xteHMiLCJ1c2VySWQiOiI4YjgzNzEzNy0zNzhhLTQ5MDItYmQ4NS1jOWFkNTkwOWE2NzIiLCJ2YWxpZEZyb20iOiIyMDIzLTA3LTI5VDE0OjQxOjUzLjk1OFoiLCJ2YWxpZEhvdXJzIjoxLCJ2YWxpZFRvIjoiMjAyMy0wNy0yOVQxNTo0MTo1My45NThaIiwiX2lkIjoiNjRjNTI1MzFhODVkYjhlNzQ5YWQwMzdiIn0sImlkIjoiOGI4MzcxMzctMzc4YS00OTAyLWJkODUtYzlhZDU5MDlhNjcyIiwidXNlcm5hbWUiOiJBblRhc01lcyIsImVtYWlsIjoiYWtpdGFzZXZza2kxMTJAZ21haWwuY29tIn0sImlhdCI6MTY5MDY0MTcxMywiZXhwIjoxNjkwNjQ1MzEzfQ.eE7UagR51eDsMPnoFZ7u6rQ5pAr6MfzzSSB8hVg1K0w",
+      "if-none-match": "W/\"1c6d-w8JssV+QWQSEDanqwx7zbyiQnpk\""
+    },
+    "ip": "::1",
+    "cookies": {
+      "tempToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wVG9rZW4iOnsiX2lkIjoiNjQ5OGMwMjdkNGRmODk4NmJiMmZjZDk0IiwiaWQiOiI2ODQwN2MwNi1iN2E0LTRmMWItODg0MS01Yjg1NmY3NjhmMWEiLCJjcmVhdGVkIjoiMjAyMy0wNi0yNVQyMjozMTowMy43OTRaIiwidXBkYXRlZCI6IjIwMjMtMDctMjlUMTQ6MDg6MzUuMjEwWiIsInRva2VuIjoidXRpN2dwaHZlb2lpMDA5emlxNDQ1bGRwcGlwcGlwanV2IiwidXNlcklkIjoiOGI4MzcxMzctMzc4YS00OTAyLWJkODUtYzlhZDU5MDlhNjcyIn0sImlhdCI6MTY5MDYzOTcxNSwiZXhwIjoxNjkwNjQzMzE1fQ.0TgJAvINtwbTEQpxicLWga9X0rLoTVX9j4_-Lwztm1A",
+      "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJzZXNzaW9uIjp7ImlkIjoiOTg3YThlNGUtNzdiMS00OWYzLTkxMjEtYWI1MWFlZTQ1MzQxIiwiY3JlYXRlZCI6IjIwMjMtMDctMjlUMTQ6NDE6NTMuOTU4WiIsInVwZGF0ZWQiOiIyMDIzLTA3LTI5VDE0OjQxOjUzLjk1OFoiLCJ0b2tlbiI6IjQ1b2E2aHVrb2dvNW9yejcwM2xteHMiLCJ1c2VySWQiOiI4YjgzNzEzNy0zNzhhLTQ5MDItYmQ4NS1jOWFkNTkwOWE2NzIiLCJ2YWxpZEZyb20iOiIyMDIzLTA3LTI5VDE0OjQxOjUzLjk1OFoiLCJ2YWxpZEhvdXJzIjoxLCJ2YWxpZFRvIjoiMjAyMy0wNy0yOVQxNTo0MTo1My45NThaIiwiX2lkIjoiNjRjNTI1MzFhODVkYjhlNzQ5YWQwMzdiIn0sImlkIjoiOGI4MzcxMzctMzc4YS00OTAyLWJkODUtYzlhZDU5MDlhNjcyIiwidXNlcm5hbWUiOiJBblRhc01lcyIsImVtYWlsIjoiYWtpdGFzZXZza2kxMTJAZ21haWwuY29tIn0sImlhdCI6MTY5MDY0MTcxMywiZXhwIjoxNjkwNjQ1MzEzfQ.eE7UagR51eDsMPnoFZ7u6rQ5pAr6MfzzSSB8hVg1K0w"
+    },
+    "user": {
+      "username": "AnTasMes",
+      "email": "akitasevski112@gmail.com"
+    },
+    "level": "INFO",
+    "timestamp": 1690641713984
+  }
+]

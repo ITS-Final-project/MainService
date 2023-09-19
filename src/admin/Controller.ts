@@ -34,6 +34,33 @@ export class AdminController {
         this._authenticationHandler = authenticationHandler || AuthenticationHandler.getInstance();
         this._authorizationHandler = authorizationHandler || AuthorizationHandler.getInstance();
 
+        router.get('/logs', this._authorizationHandler.checkRole('admin'), this._authorizationHandler.getTempToken('us'), (req, res) => {
+            res.render('admin_logs_list.ejs',
+            {
+                title: 'Logs list',
+                user: this._authenticationHandler.getUser(req, res)
+            });
+        });
+
+        router.get('/logs/:service/:name', this._authorizationHandler.checkRole('admin'), this._authorizationHandler.getTempToken('us'), (req, res) => {
+            var service = req.params.service;
+            var name = req.params.name;
+
+            if (!service || !name) {
+                res.render('error_page.ejs', { user: this._authenticationHandler.getUser(req, res) })
+                return;
+            }
+
+            res.render('admin_log_detail.ejs',
+            {
+                title: 'Log',
+                user: this._authenticationHandler.getUser(req, res),
+                service: service,
+                name: name
+            });
+
+        });
+
         router.get('/classificator/structure', this._authorizationHandler.checkRole('admin'), this._authorizationHandler.getTempToken('us'), (req, res) => {
             const sendToken = jwtConfiguration.sign({send: true}, new USSecret())
 
