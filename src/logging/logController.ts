@@ -30,8 +30,6 @@ export class LogController {
             // Returns a list of all log files
             var data = await this._service.getAll();
 
-            console.log(data);
-
             res.send(data);
         });
 

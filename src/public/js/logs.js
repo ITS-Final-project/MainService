@@ -17,6 +17,7 @@ function getAllLogs(){
 function showLogLists(data){
     var msLogs = data.MainService;
     var aiLogs = data.AIService;
+    var usLogs = data.UserService;
     // var usLogs = data.UserService;
 
     var msUL = document.getElementById('ms');
@@ -27,6 +28,9 @@ function showLogLists(data){
     var aiUL = document.getElementById('ai');
     fillUL(aiLogs, aiUL, 'AIService');
 
+
+    var usUL = document.getElementById('us');
+    fillUL(usLogs, usUL, 'UserService');
 }
 
 function fillUL(data, UL, service){
@@ -56,8 +60,9 @@ function fillUL(data, UL, service){
         a.setAttribute('href', `/admin/logs/${service}/${log_name}`);
         a.classList.add('list-group-item-action', 'list-group-item');
 
+        var short_log_name = log_name.split('.')[0].split('_')[1];
         
-        a.appendChild(document.createTextNode(`${data[i]} - ${date}`));
+        a.appendChild(document.createTextNode(`${short_log_name} - ${date}`));
 
         if (i == 0) {
             a.classList.add('active');

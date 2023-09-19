@@ -1,4 +1,4 @@
-import { ISecret, PYSecret } from "../configuration/secretConfiguration";
+import { ISecret, PYSecret, USSecret } from "../configuration/secretConfiguration";
 import { LogHandler } from "./logHandler";
 import { LogRepository } from "./logRepository";
 import jwtConfiguration from "../configuration/jwtConfiguration";
@@ -26,10 +26,11 @@ export class LogService {
         var logs = {} as any;
         logs["MainService"] = this._repository.findAllLogFiles();
         var services = [
-            // {
-            //     name: "UserService",
-            //     url: "http://localhost:3001/logs/list"
-            // },
+            {
+                name: "UserService",
+                url: "http://localhost:3001/logs/list",
+                secret: new USSecret()
+            },
             {
                 name: "AIService",
                 url: "http://localhost:3002/logs/get",
@@ -40,8 +41,13 @@ export class LogService {
         for (var i = 0; i < services.length; i++) {
             var service = services[i];
             var result = await this.getServiceLog(service.url, service.secret);
-
-            logs[service.name] = result.data.result;
+            if (result != null) {
+                try {
+                    logs[service.name] = result.data.result;
+                }catch {
+                    logHandler.error({message: `Could not get logs for ${service.name}`})
+                }
+            }
         }
 
         return logs;
@@ -49,12 +55,16 @@ export class LogService {
 
     async getServiceLog(url: string, secret: ISecret){
         var token = jwtConfiguration.sign({send: true}, secret);
-        return await axios.get(url,
-            {
-                data: {
-                    token: token
-                }
-            });
+        try{
+            return await axios.get(url,
+                {
+                    data: {
+                        token: token
+                    }
+                });
+        }catch {
+            return null;
+        }
     }
 
 
@@ -118,10 +128,11 @@ export class LogService {
         }
 
         var services = [
-            // {
-            //     name: "UserService",
-            //     url: "http://localhost:3001/logs/list"
-            // },
+            {
+                name: "UserService",
+                url: "http://localhost:3001/logs/get",
+                secret: new USSecret()
+            },
             {
                 name: "AIService",
                 url: "http://localhost:3002/logs/u/get"
